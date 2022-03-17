@@ -1,3 +1,11 @@
-#Tämä on Ohjelmistotekniikan kurssin harjoitustyön readme -tiedosto
+#Tämä on Ohjelmistotekniikan kurssin harjoitustyö
 
-Tämä **tiedosto** sisältää *ensimmäisen* viikon laskarit.
+## Tämä **tiedosto** sisältää *laskarit*.
+
+### Viikko 1
+
+[https://github.com/evahteri/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt]
+
+[https://github.com/evahteri/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt]
+
+
