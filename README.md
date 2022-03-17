@@ -1,6 +1,6 @@
 # Tämä on Ohjelmistotekniikan kurssin harjoitustyö
 
-## Tämä __tiedosto__ sisältää *laskarit*.
+## Tämä **tiedosto** sisältää *laskarit*.
 
 ### Viikko 1
 
