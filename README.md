@@ -8,3 +8,5 @@
 [komentorivi.txt](https://github.com/evahteri/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 Tämä **osio** sisältää viikon 1 *laskarit*.
+
+Nyt tätä muokattiin paikallisella koneella.
