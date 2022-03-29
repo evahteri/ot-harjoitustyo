@@ -1,15 +1,15 @@
-#Vaatimusmäärittely
-##Sovelluksen tarkoitus
+# Vaatimusmäärittely
+## Sovelluksen tarkoitus
 Sovellus on työvuorosovellus, jossa työntekijä voi nähdä vapaat työvuorot ja valita ne itselleen sekä nähdä omat vuoronsa. Työnantaja pystyy lataamaan sovellukseen avoimia työvuoroja työntekijöiden vastaanotettavaksi. Sovelluksen tarkoitus on sopia erityisesti yritykselle joka tarjoaa usealle eri työntekijälle keikkaluontoisia töitä.
 
-##Käyttäjät
+## Käyttäjät
 Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työntekijä voi valita listasta itselleen työvuoroja ja nähdä omat työvuoronsa. Työntekijä ei nää muiden työntekijöiden vuoroja, vain omat ja vapaat. Työnantaja pystyy lisäämään vapaita vuoroja ja tarkastelemaan kaikkia vuoroja.
 
-##Käyttöliittymäluonnos
+## Käyttöliittymäluonnos
 todo
 
-##Perusversion tarjoama toiminnallisuus
-###Ennen kirjautumista
+## Perusversion tarjoama toiminnallisuus
+### Ennen kirjautumista
 -Käyttäjä voi luoda käyttäjätunnuksen
   -Salasanan täytyy olla yli 8 merkkiä ja sisältää:
     -Vähintään yksi iso kirjain
@@ -19,8 +19,8 @@ todo
    -Tunnusta luodessa valitaan rooli työntekijän ja työnantajan välillä
 -Käyttäjä voi kirjautua sisään tunnuksella ja salasanalla
   -Jos käyttäjätunnus tai salasana on väärin, järjestelmä ilmoittaa siitä
-###Kirjautumisen jälkeen
-####Työntekijän rooli
+### Kirjautumisen jälkeen
+#### Työntekijän rooli
 -Käyttäjä voi valita haluaako nähdä omat vuorot vai vapaat vuorot
   -Vapaissa vuoroissa näkyy vapaat vuorot ja siitä tiedot:
     -Päivämäärä
@@ -29,7 +29,7 @@ todo
     -"Choose shift" -nappula jolloin vuoro siirtyy omiin vuoroihin
   -Omissa vuoroissa näkyy valitut vuorot
 -Käyttäjä voi kirjautua ulos
-####Työnantajan rooli
+#### Työnantajan rooli
 -Käyttäjä voi luoda uuden vuoron
   -Uusi vuoro -lomake kysyy tiedot
     -Päivämäärä
@@ -40,7 +40,7 @@ todo
   -Käyttäjä voi poistaa vuoron
 -Käyttäjä voi kirjautua ulos
 
-##Jatkokehitysideoita
+## Jatkokehitysideoita
 -Työnantaja pystyy muokata olemassaolevia vuoroja
 -Lisätietojen lisääminen työvuoroon
 -Omien työvuorojen organisointi tehtyihin ja tuleviin
