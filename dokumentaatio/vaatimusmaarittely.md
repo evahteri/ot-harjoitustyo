@@ -46,6 +46,7 @@ todo
 - Omien työvuorojen organisointi tehtyihin ja tuleviin
 - Työvuorojen lajittelu ja järjestys eri kriteereillä
 - Käyttäjän ja tietojen poistaminen
+- Työnantaja voi suoraan määrätä työntekijälle vuoroja
 
 
   
