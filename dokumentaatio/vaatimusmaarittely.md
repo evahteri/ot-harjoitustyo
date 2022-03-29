@@ -41,11 +41,11 @@ todo
 - Käyttäjä voi kirjautua ulos
 
 ## Jatkokehitysideoita
--Työnantaja pystyy muokata olemassaolevia vuoroja
--Lisätietojen lisääminen työvuoroon
--Omien työvuorojen organisointi tehtyihin ja tuleviin
--Työvuorojen lajittelu ja järjestys eri kriteereillä
--Käyttäjän ja tietojen poistaminen
+- Työnantaja pystyy muokata olemassaolevia vuoroja
+- Lisätietojen lisääminen työvuoroon
+- Omien työvuorojen organisointi tehtyihin ja tuleviin
+- Työvuorojen lajittelu ja järjestys eri kriteereillä
+- Käyttäjän ja tietojen poistaminen
 
 
   
