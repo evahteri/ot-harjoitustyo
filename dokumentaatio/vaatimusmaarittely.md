@@ -6,7 +6,7 @@ Sovellus on työvuorosovellus, jossa työntekijä voi nähdä vapaat työvuorot 
 Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työntekijä voi valita listasta itselleen työvuoroja ja nähdä omat työvuoronsa. Työntekijä ei nää muiden työntekijöiden vuoroja, vain omat ja vapaat. Työnantaja pystyy lisäämään vapaita vuoroja ja tarkastelemaan kaikkia vuoroja.
 
 ## Käyttöliittymäluonnos
-todo
+![Käyttöliittymäluonnos](/kuvat/IMG_20220329_175616.jpg)
 
 ## Perusversion tarjoama toiminnallisuus
 ### Ennen kirjautumista
