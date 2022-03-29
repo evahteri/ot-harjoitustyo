@@ -1,5 +1,5 @@
 # Työaikakirjanpito
-| päivä         | aika          | mitä tein                |
+| Päivä         | Aika (h)          | Mitä tein                |
 | ------------- |---------------|--------------------------|
-| 29.3.         | 2             | dokumentaation tekeminen |
+| 29.3.         | 2             | Dokumentaation tekeminen |
 | yht.          | 2             |                          |
