@@ -1,3 +1,3 @@
-#Viikko 3
+# Viikko 3
 
--Projectin aloitus
+- Projektin aloitus
