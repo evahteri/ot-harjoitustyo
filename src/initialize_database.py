@@ -1,10 +1,14 @@
 import sqlite3
 
+from db_connection import get_db_connection
+
+
+
 class Create_databases:
 
     def __init__(self):
 
-        self._connection = sqlite3.connect("users.db")
+        self._connection = get_db_connection()
 
     def create_user_database(self):
 

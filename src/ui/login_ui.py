@@ -6,7 +6,7 @@ class Create_user_ui:
     def __init__(self,root):
         self._root = root
 
-    def start(self):
+    def base(self):
         header = ttk.Label(master=self._root, text = "Create a user")
 
         username_header = ttk.Label(master=self._root, text= "Username")
@@ -25,14 +25,16 @@ class Create_user_ui:
         password_header.pack()
         password_entry.pack()
         create_button.pack()
-
-window = Tk()
-
-window.title("Shift App")
-
-ui = Create_user_ui(window)
-ui.start()
-
-window.mainloop()
     
+    def start(self):
+
+        window = Tk()
+
+        window.title("Shift App")
+
+        ui = Create_user_ui(window)
+        ui.base()
+
+        window.mainloop()
+            
 
