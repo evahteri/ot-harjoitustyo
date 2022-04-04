@@ -1,8 +1,10 @@
-from ui import login_ui
+
+from ui.login_ui import Create_user_ui
+
 
 def main():
     
-    login_ui.start()
+    Create_user_ui.start()
 
 if __name__ == "__main__":
 

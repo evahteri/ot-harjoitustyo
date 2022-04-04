@@ -26,7 +26,7 @@ class Create_user_ui:
         password_entry.pack()
         create_button.pack()
     
-    def start(self):
+    def start():
 
         window = Tk()
 
