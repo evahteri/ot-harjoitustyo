@@ -14,7 +14,7 @@ class User_database:
 
         cursor = self._connection.cursor()
 
-        cursor.execute("CREATE TABLE user_database (username BLOB NOT NULL, password BLOB NOT NULL, role BLOB NOT NULL)")
+        cursor.execute("CREATE TABLE user_database (username TEXT NOT NULL, password TEXT NOT NULL, role TEXT NOT NULL)")
 
         self._connection.commit()
 

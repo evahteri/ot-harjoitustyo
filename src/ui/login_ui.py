@@ -1,10 +1,22 @@
 from tkinter import Tk, ttk
+from services import shift_app_service
 
 
 class Create_user_ui:
 
     def __init__(self,root):
         self._root = root
+        self._username_entry = None
+        self._password_entry = None
+    
+    def handle_button_click(self):
+        username = self._username_entry.get()
+        password = self._password_entry.get()
+        shift_app_service.ShiftAppService.create_user(username=username, password=password, role=None)
+        
+
+        
+
 
     def base(self):
         header = ttk.Label(master=self._root, text = "Create a user")
@@ -17,7 +29,7 @@ class Create_user_ui:
 
         password_entry = ttk.Entry(master=self._root)
 
-        create_button = ttk.Button(master=self._root, text="Create")
+        create_button = ttk.Button(master=self._root, text="Create", command=self.handle_button_click)
 
         header.pack()
         username_header.pack()
@@ -25,6 +37,7 @@ class Create_user_ui:
         password_header.pack()
         password_entry.pack()
         create_button.pack()
+    
     
     def start():
 
