@@ -1,5 +1,5 @@
 from tkinter import Tk, ttk
-from services import shift_app_service
+from services.shift_app_service import ShiftAppService
 
 
 class Create_user_ui:
@@ -12,7 +12,7 @@ class Create_user_ui:
     def handle_button_click(self):
         username = self._username_entry.get()
         password = self._password_entry.get()
-        shift_app_service.ShiftAppService.create_user(username=username, password=password, role=None)
+        ShiftAppService.create_user(username=username, password=password, role=None)
         
 
         
