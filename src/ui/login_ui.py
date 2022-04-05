@@ -14,10 +14,6 @@ class Create_user_ui:
         password = self._password_entry.get()
         ShiftAppService.create_user(username=username, password=password, role=None)
         
-
-        
-
-
     def base(self):
         header = ttk.Label(master=self._root, text = "Create a user")
 

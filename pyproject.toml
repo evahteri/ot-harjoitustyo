@@ -6,6 +6,7 @@ authors = ["Eero Vahteri <eero.vahteri@helsinki.fi>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+invoke = "^1.7.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
