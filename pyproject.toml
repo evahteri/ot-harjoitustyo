@@ -8,6 +8,8 @@ authors = ["Eero Vahteri <eero.vahteri@helsinki.fi>"]
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
+pytest = "^7.1.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
