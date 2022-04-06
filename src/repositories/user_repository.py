@@ -1,4 +1,3 @@
-
 import sqlite3
 
 from entities.user import User
@@ -7,8 +6,8 @@ from db_connection import get_db_connection
 
 class UserRepository:
 
-    def __init__(self, connection):
-        self._connection = connection
+    def __init__(self):
+        self._connection = get_db_connection()
 
     def create_database(self):
         cursor = self._connection.cursor()
@@ -16,11 +15,10 @@ class UserRepository:
         self._connection.commit()
         cursor.close()
 
-    def create_user(self, user = User):
+    def create_user(self, user=User):
         cursor = self._connection.cursor()
         cursor.execute("INSERT INTO user_database VALUES (?,?,?)", user.username, user.password, user.role)
         self._connection.commit()
         cursor.close()
 
-user_database = UserRepository(get_db_connection())
 

@@ -8,7 +8,7 @@ class Create_user_ui:
         self._root = root
         self._username_entry = StringVar()
         self._password_entry = StringVar()
-    
+        self._shiftappservice = ShiftAppService()
         
     def base(self):
         header = ttk.Label(master=self._root, text = "Create a user")
@@ -33,8 +33,7 @@ class Create_user_ui:
     def handle_button_click(self):
         username = self._username_entry
         password = self._password_entry
-        ShiftAppService.create_user(username=username, password=password, role=None)
-    
+        self._shiftappservice.create_user(username=username, password=password, role=None)
     
     def start():
 
