@@ -31,9 +31,9 @@ class Create_user_ui:
         create_button.pack()
     
     def handle_button_click(self):
-        username = self._username_entry
-        password = self._password_entry
-        self._shiftappservice.create_user(username=username, password=password, role=None)
+        username = "eero"
+        password = "salasana"
+        self._shiftappservice.create_user(username=username, password=password, role="employee")
     
     def start():
 
