@@ -6,4 +6,5 @@
 | 4.4.          | 6             | Tkinter opettelu, tietokantojen kanssa työskentelyä    |
 | 5.4.          | 6             | Tietokantojen kanssa työskentelyä, testien yrittämistä |
 | 6.4.          | 2             | Käyttäjätietojen tallennus onnistuu                    | 
+| 6.4.          | 1             | Testien luomista                                       |
 | yht.          | 18            |                                                        |

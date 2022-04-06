@@ -26,7 +26,7 @@ class UserRepository:
     
     def find_user(self, username):
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM user_database WHERE username = ?", username)
+        cursor.execute("SELECT * FROM user_database WHERE username=?", [username])
         row = cursor.fetchone()
         return return_user(row)
 
