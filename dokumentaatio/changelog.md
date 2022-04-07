@@ -6,5 +6,12 @@
 - invoke -käskyt start, test ja coverage_report luotu
 - Käyttäjä voi käynnistää create user näkymän index.py tiedoston suorittamalla tai invoke käskyllä
 - Luotu testi, joka testaa, luoko initialize_database.py oikeanlaisen tiedoston
-- Käyttäjän luominen graafisen käyttöliittymän kautta onnistuu
 
+# Viikko 4
+
+- Käyttäjän luominen graafisen käyttöliittymän kautta onnistuu
+- Ensimmäinen testi toimii; voidaan testata, toimiiko käyttäjän luominen
+- Pylint asennettu 
+- Autopep8 asennettu
+- Task "format" formatoi koodin
+- Task "lint" tarkistaa koodin laadun
