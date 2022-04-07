@@ -13,9 +13,9 @@ class TestUserRepository(unittest.TestCase):
 
 
 
-   # def test_user_database_file_exists(self):
+    def test_user_database_file_exists(self):
 
-        #self.assertEqual(os.path.exists("/ot-harjoitustyo/users.db"), True)
+        self.assertEqual(os.path.exists("/ot-harjoitustyo/users.db"), True)
     
     def test_create_user_creates_a_user(self):
         user = UserRepository().find_user("Samuli")
