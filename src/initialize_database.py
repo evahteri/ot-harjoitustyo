@@ -1,5 +1,6 @@
 from db_connection import get_db_connection
 
+
 class CreateDatabases:
 
     def __init__(self):
@@ -13,6 +14,7 @@ class CreateDatabases:
             role TEXT NOT NULL)")
         self._connection.commit()
         cursor.close()
+
 
 if __name__ == "__main__":
     c = CreateDatabases()
