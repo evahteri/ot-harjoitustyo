@@ -15,3 +15,5 @@
 - Autopep8 asennettu
 - Task "format" formatoi koodin
 - Task "lint" tarkistaa koodin laadun
+- Task "build" alustaa nyt tietokannan oikein, että muut moduulit löytävät users.db:n
+- Ui:ssa on nyt vaihtoehto roolille
