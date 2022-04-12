@@ -1,6 +1,4 @@
-from venv import create
 from db_connection import get_db_connection
-
 
 class CreateDatabases:
 
@@ -15,7 +13,7 @@ class CreateDatabases:
             role TEXT NOT NULL)")
         self._connection.commit()
         cursor.close()
-    
+
     def initialize_database(self):
         self.create_user_database()
 
