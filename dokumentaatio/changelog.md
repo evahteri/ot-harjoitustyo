@@ -17,3 +17,5 @@
 - Task "lint" tarkistaa koodin laadun
 - Task "build" alustaa nyt tietokannan oikein, että muut moduulit löytävät users.db:n
 - Ui:ssa on nyt vaihtoehto roolille
+- Roolin valinta toimii ja tallentuu databaseen
+- Task coverage report luotu
