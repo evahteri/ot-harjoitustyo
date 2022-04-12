@@ -10,13 +10,13 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
 
 ## Perusversion tarjoama toiminnallisuus
 ### Ennen kirjautumista
-- Käyttäjä voi luoda käyttäjätunnuksen
+- Käyttäjä voi luoda käyttäjätunnuksen _tehty_
   - Salasanan täytyy olla yli 8 merkkiä ja sisältää:
     - Vähintään yksi iso kirjain
     - Vähintään yksi pieni kirjain
     - Vähintään yksi numero
     - Vähintään yksi erikoismerkki (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.)
-   - Tunnusta luodessa valitaan rooli työntekijän ja työnantajan välillä
+   - Tunnusta luodessa valitaan rooli työntekijän ja työnantajan välillä _tehty_
 - Käyttäjä voi kirjautua sisään tunnuksella ja salasanalla
   - Jos käyttäjätunnus tai salasana on väärin, järjestelmä ilmoittaa siitä
 ### Kirjautumisen jälkeen
