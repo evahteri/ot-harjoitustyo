@@ -9,8 +9,8 @@
 | 6.4.          | 1             | Testien luomista                                       |
 | 7.4.          | 3             | Koodin siistiminen, testien kanssa työskentely         |
 | 7.4.          | 1             | Uudet taskit, login ui täydennys                       |
-| 12.4.         | 3             | Käyttäjän luomisen toiminnallisuus valmis              |
+| 12.4.         | 3             | Käyttäjän luomisen toiminnallisuus melkein valmis      |
+| 12.4.         | 2             | Viikon 4 vaativuudet (taskit, pakkauskaavio)           |
 |               |               |                                                        |
 |               |               |                                                        |
-|               |               |                                                        |
-| yht.          | 22            |                                                        |
+| yht.          | 30            |                                                        |
