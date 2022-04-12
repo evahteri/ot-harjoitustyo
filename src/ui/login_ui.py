@@ -6,7 +6,7 @@ class Create_user_ui:
 
     def __init__(self, root):
         self._root = root
-        self._role = None
+        self._role = StringVar()
         self._username_entry = StringVar()
         self._password_entry = StringVar()
         self._shiftappservice = ShiftAppService()
@@ -43,6 +43,7 @@ class Create_user_ui:
     def handle_button_click(self):
         username = self.username_entry.get()
         password = self.password_entry.get()
+        self._role = self._role.get()
         self._shiftappservice.create_user(
             username=username, password=password, role=self._role)
 
