@@ -5,6 +5,8 @@
 
 [Changelog](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
+[Arkkitehtuurikuvaus](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Asennus
 
 ### Asenna riippuvuudet komennolla 
