@@ -11,6 +11,6 @@
 | 7.4.          | 1             | Uudet taskit, login ui täydennys                       |
 | 12.4.         | 3             | Käyttäjän luomisen toiminnallisuus melkein valmis      |
 | 12.4.         | 2             | Viikon 4 vaativuudet (taskit, pakkauskaavio)           |
+| 14.4.         | 3             | Vuorojen luonnin toiminnallisuuden pohjustamista       |
 |               |               |                                                        |
-|               |               |                                                        |
-| yht.          | 30            |                                                        |
+| yht.          | 33            |                                                        |
