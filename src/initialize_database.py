@@ -22,7 +22,7 @@ class CreateDatabases:
             (date TEXT NOT NULL, \
             time TEXT NOT NULL, \
             location TEXT NOT NULL, \
-            employee TEXT NOT NULL)")
+            employee TEXT)")
         self.shift_connection.commit()
         cursor.close()
 

@@ -9,7 +9,7 @@ class ShiftAppService:
     def __init__(self):
         self._user = None
         self._user_repository = UserRepository()
-        self._shift_repository = ShiftRepository
+        self._shift_repository = ShiftRepository()
 
     def create_user(self, username, password, role):
         new_user = User(username, password, role)
