@@ -21,3 +21,6 @@
 - Task coverage report luotu
 
 # Viikko 5
+- Lisätty olio "Shift" entities kansioon
+- Build -task alustaa nyt myös shift.db tiedoston onnistuneesti
+- Luotu toiminnallisuutta vuoron luomiseksi
