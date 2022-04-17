@@ -24,3 +24,4 @@
 - Lisätty olio "Shift" entities kansioon
 - Build -task alustaa nyt myös shift.db tiedoston onnistuneesti
 - Luotu toiminnallisuutta vuoron luomiseksi
+- Vuoron luominen onnistuu komentorivin kautta, testi tätä varten luotu
