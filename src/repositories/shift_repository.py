@@ -24,7 +24,7 @@ class ShiftRepository:
     def find_shift(self, shift):
         cursor = self._connection.cursor()
         cursor.execute(
-            "SELECT * FROM shift_database WHERE (date, time, location, employee)=(?,?,?,?)", [(shift.date, shift.time, shift.location, shift.employee)])
+            "SELECT * FROM shift_database WHERE (date, time, location, employee)=(?,?,?,?)", (shift.date, shift.time, shift.location, shift.employee))
         row = cursor.fetchone()
         return return_shift(row)
     
