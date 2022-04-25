@@ -12,5 +12,10 @@
 | 12.4.         | 3             | Käyttäjän luomisen toiminnallisuus melkein valmis      |
 | 12.4.         | 2             | Viikon 4 vaativuudet (taskit, pakkauskaavio)           |
 | 14.4.         | 3             | Vuorojen luonnin toiminnallisuuden pohjustamista       |
+| 17.4.         | 2             | Vuorojen luomisen toimintoja                           |
+| 19.4.         | 2             | Testin luominen vuoron lisäämiseen                     | 
+| 20.4.         | 3             | Työntekijän näkymän luomista                           |
+| 25.4.         | 5             | UI:n uudelleen tekeminen frame-pohjaisesti             |
 |               |               |                                                        |
-| yht.          | 33            |                                                        |
+|               |               |                                                        |
+| yht.          |               |                                                        |

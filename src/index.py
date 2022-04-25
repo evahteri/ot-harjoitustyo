@@ -1,8 +1,15 @@
-from ui.login_ui import Create_user_ui
+from ui.ui import UI
+from tkinter import Tk
 
 
 def main():
-    Create_user_ui.start()
+    window = Tk()
+    window.title("Work Shift App")
+
+    ui = UI(window)
+    ui.start()
+
+    window.mainloop()
 
 
 if __name__ == "__main__":

@@ -1,6 +1,5 @@
 from entities.shift import Shift
 from entities.user import User
-
 from shift_db_connection import get_shift_db_connection
 
 
@@ -30,7 +29,7 @@ class ShiftRepository:
         row = cursor.fetchone()
         return return_shift(row)
     
-    def find_user_shifts(self, user):
+    def find_user_shifts(self,user):
         cursor = self._connection.cursor()
         cursor.execute(
             "SELECT * FROM shift_database WHERE employee = ?", [user.username])
@@ -43,3 +42,10 @@ class ShiftRepository:
             "SELECT * FROM shift_database")
         row = cursor.fetchall()
         return return_shift(row)
+    
+    def find_available_shifts(self):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "SELECT * FROM shift_database WHERE employee = NULL")
+        row = cursor.fetchall()
+        return list(row)
