@@ -1,5 +1,4 @@
 from entities.user import User
-
 from db_connection import get_db_connection
 
 
@@ -26,4 +25,12 @@ class UserRepository:
         cursor.execute(
             "SELECT * FROM user_database WHERE username=?", [username])
         row = cursor.fetchone()
+        return return_user(row)
+    
+    def login(self, username, password):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "SELECT * FROM user_database WHERE (username, password)=(?,?)", ([username], [password]))
+        row = cursor.fetchone()
+
         return return_user(row)

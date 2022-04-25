@@ -15,7 +15,7 @@
 | 17.4.         | 2             | Vuorojen luomisen toimintoja                           |
 | 19.4.         | 2             | Testin luominen vuoron lisäämiseen                     | 
 | 20.4.         | 3             | Työntekijän näkymän luomista                           |
-| 25.4.         | 5             | UI:n uudelleen tekeminen frame-pohjaisesti             |
-|               |               |                                                        |
+| 25.4.         | 4             | UI:n uudelleen tekeminen frame-pohjaisesti             |
+| 25.4.         | 2             | UI:n täydentämistä eri näkymillä                       |
 |               |               |                                                        |
 | yht.          |               |                                                        |
