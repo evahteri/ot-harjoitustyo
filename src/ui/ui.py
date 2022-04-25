@@ -1,5 +1,8 @@
+from services.shift_app_service import ShiftAppService
 from ui.create_user import CreateUserUi
 from tkinter import Tk
+
+from ui.employee_ui import CreateEmployeeUi
 
 class UI:
 
@@ -32,5 +35,11 @@ class UI:
         self._current_view = CreateUserUi(
             self._root, self._handle_create_user
         )
-        
+        self._current_view.pack()
+    
+    def _show_create_employee_view(self):
+        user = ShiftAppService().get_current_user()
+        self._current_view = CreateEmployeeUi(
+            self._root, self._handle_create_user, user
+        )
         self._current_view.pack()

@@ -20,10 +20,10 @@ class ShiftAppService:
         new_shift = Shift(date, time, location, employee)
         self._shift_repository.create_shift(new_shift)
     
-    #def set_current_user(self, user):
-        #self.current_user = user
+    def set_current_user(self, user):
+        self.current_user = user
 
-    #def get_current_user(self):
-        #return self.current_user
+    def get_current_user(self):
+        return self.current_user
 
 
