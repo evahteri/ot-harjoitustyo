@@ -3,8 +3,6 @@ from services.shift_app_service import ShiftAppService, FailedLoginError
 from ui import create_user
 
 
-
-
 class LoginUi:
 
     def __init__(self, root, handle_employee_view, handle_create_user):
@@ -17,10 +15,10 @@ class LoginUi:
         self._shiftappservice = ShiftAppService()
 
         self._base()
-    
+
     def pack(self):
         self._frame.pack(fill=constants.X)
-    
+
     def destroy(self):
         self._frame.destroy()
 
@@ -35,30 +33,25 @@ class LoginUi:
 
         self.username_entry = ttk.Entry(
             master=self._frame, textvariable=self._username_entry)
-        
-        self.username_entry.grid(row= 3, column=0)
-        
 
+        self.username_entry.grid(row=3, column=0)
 
         password_header = ttk.Label(master=self._frame, text="Password")
-        password_header.grid(row= 4, column=0)
-
+        password_header.grid(row=4, column=0)
 
         self.password_entry = ttk.Entry(
             master=self._frame, textvariable=self._password_entry)
-        
-        self.password_entry.grid(row= 5, column=0)
+
+        self.password_entry.grid(row=5, column=0)
 
         login_button = ttk.Button(
             master=self._frame, text="Login", command=self.handle_button_click)
-        login_button.grid(row= 10, column=0)
+        login_button.grid(row=10, column=0)
 
         create_user_button = ttk.Button(
-            master = self._frame, text= "Create new user", command = self._handle_create_user
+            master=self._frame, text="Create new user", command=self._handle_create_user
         )
-        create_user_button.grid(row = 11, column = 0)
-        
-
+        create_user_button.grid(row=11, column=0)
 
     def handle_button_click(self):
         username = self.username_entry.get()
@@ -67,6 +60,5 @@ class LoginUi:
             self._shiftappservice.login(username, password)
             self._handle_employee_view()
         except FailedLoginError:
-            messagebox.showerror(title="Login Error", message="Invalid username or password!")
-    
-
+            messagebox.showerror(title="Login Error",
+                                 message="Invalid username or password!")

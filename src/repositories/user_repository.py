@@ -26,7 +26,7 @@ class UserRepository:
             "SELECT * FROM user_database WHERE username=?", [username])
         row = cursor.fetchone()
         return return_user(row)
-    
+
     def login(self, username, password):
         cursor = self._connection.cursor()
         cursor.execute(

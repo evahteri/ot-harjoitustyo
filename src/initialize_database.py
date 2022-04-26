@@ -1,6 +1,7 @@
 from db_connection import get_db_connection
 from shift_db_connection import get_shift_db_connection
 
+
 class CreateDatabases:
 
     def __init__(self):
@@ -15,7 +16,7 @@ class CreateDatabases:
             role TEXT NOT NULL)")
         self._connection.commit()
         cursor.close()
-    
+
     def create_shift_database(self):
         cursor = self.shift_connection.cursor()
         cursor.execute("CREATE TABLE shift_database \

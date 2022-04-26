@@ -3,7 +3,6 @@ from services.shift_app_service import ShiftAppService
 from repositories.shift_repository import ShiftRepository
 
 
-
 class CreateEmployeeUi:
 
     def __init__(self, root, handle_login):
@@ -14,10 +13,10 @@ class CreateEmployeeUi:
         self._shiftappservice = ShiftAppService()
 
         self._base()
-    
+
     def pack(self):
         self._frame.pack(fill=constants.X)
-    
+
     def destroy(self):
         self._frame.destroy()
 
@@ -27,21 +26,19 @@ class CreateEmployeeUi:
         header = ttk.Label(master=self._frame, text="Choose a function")
         header.grid(row=0, column=0)
 
-
         self.available_button = ttk.Button(
             master=self._frame, text="Show available shifts", command=self.handle_available_button_click)
         self.available_button.grid(row=2, column=0)
-        
+
         self.my_shifts_button = ttk.Button(
             master=self._frame, text="Show my shifts", command=self.handle_my_shifts_button_click)
 
-        self.my_shifts_button.grid(row= 4, column=0)
-
+        self.my_shifts_button.grid(row=4, column=0)
 
     def handle_available_button_click(self):
         shifts = ShiftRepository().find_available_shifts()
         print(shifts)
-    
+
     def handle_my_shifts_button_click(self):
         shifts = ShiftRepository().find_user_shifts(user=self.user)
         print(shifts)

@@ -3,11 +3,14 @@ from repositories.shift_repository import ShiftRepository
 from entities.user import User
 from entities.shift import Shift
 
+
 class FailedLoginError(Exception):
     pass
 
+
 class InvalidPassword(Exception):
     pass
+
 
 class ShiftAppService:
 
@@ -21,12 +24,12 @@ class ShiftAppService:
             raise InvalidPassword("Invalid password")
         new_user = User(username, password, role)
         self._user_repository.create_user(new_user)
-    
+
     def create_shift(self, date, time, location, employee):
         new_shift = Shift(date, time, location, employee)
         self._shift_repository.create_shift(new_shift)
-    
-    def login(self,username, password):
+
+    def login(self, username, password):
         self._user = UserRepository().login(username, password)
         if not self._user:
             raise FailedLoginError("Invalid username or password")
@@ -34,9 +37,10 @@ class ShiftAppService:
 
     def get_current_user(self):
         return self._user
-    
+
     def _password_checker(self, password):
-        special_characters = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~","."]
+        special_characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
+                              ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~", "."]
         valid = True
         if len(password) < 8:
             valid = False
@@ -49,8 +53,3 @@ class ShiftAppService:
         if not any(i in special_characters for i in password):
             valid = False
         return valid
-        
-
-
-
- 
