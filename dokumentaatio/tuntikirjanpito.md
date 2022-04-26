@@ -17,5 +17,5 @@
 | 20.4.         | 3             | Työntekijän näkymän luomista                           |
 | 25.4.         | 4             | UI:n uudelleen tekeminen frame-pohjaisesti             |
 | 25.4.         | 2             | UI:n täydentämistä eri näkymillä                       |
-|               |               |                                                        |
+| 26.4.         | 5             | UI:n toiminnallisuuden hiomista                        |
 | yht.          |               |                                                        |

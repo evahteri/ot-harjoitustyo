@@ -1,7 +1,6 @@
-from asyncio import constants
-from tkinter import StringVar, Tk, ttk, constants
+from tkinter import StringVar, Tk, ttk, constants, messagebox
 from services.shift_app_service import ShiftAppService
-from entities.user import User
+
 
 
 class CreateUserUi:
@@ -69,4 +68,5 @@ class CreateUserUi:
         self._role = self._role.get()
         self._shiftappservice.create_user(
             username=username, password=password, role=self._role)
+        messagebox.showinfo(title="User created", message="User created succesfully!")
 

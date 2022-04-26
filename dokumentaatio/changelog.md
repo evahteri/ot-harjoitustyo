@@ -25,3 +25,4 @@
 - Build -task alustaa nyt myös shift.db tiedoston onnistuneesti
 - Luotu toiminnallisuutta vuoron luomiseksi
 - Vuoron luominen onnistuu komentorivin kautta, testi tätä varten luotu
+- UI rakennettu uudelleen näkymien vaihtamiseksi
