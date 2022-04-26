@@ -5,9 +5,10 @@ from services.shift_app_service import ShiftAppService
 
 class CreateUserUi:
 
-    def __init__(self, root, handle_create_user):
+    def __init__(self, root, handle_create_user, handle_login):
         self._root = root
         self._handle_create_user = handle_create_user
+        self._handle_login = handle_login
         self._frame = None
         self._role = StringVar()
         self._username_entry = StringVar()
@@ -56,13 +57,19 @@ class CreateUserUi:
         self.employer_button.grid(row= 8, column=0)
 
         create_button = ttk.Button(
-            master=self._frame, text="Create", command=self.handle_button_click)
+            master=self._frame, text="Create", command=self._handle_button_click)
         create_button.grid(row= 10, column=0)
+
+        back_button = ttk.Button(
+            master=self._frame, text= "Back", command= self._handle_back_button
+        )
+        back_button.grid(row=12, column=0)
         
 
+    def _handle_back_button(self):
+        self._handle_login()
 
-
-    def handle_button_click(self):
+    def _handle_button_click(self):
         username = self.username_entry.get()
         password = self.password_entry.get()
         self._role = self._role.get()

@@ -47,7 +47,7 @@ class UI:
     def _show_create_user_view(self):
 
         self._current_view = CreateUserUi(
-            self._root, self._handle_create_user
+            self._root, self._handle_create_user, self._handle_login
         )
         self._current_view.pack()
     
