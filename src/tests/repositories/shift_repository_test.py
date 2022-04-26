@@ -21,6 +21,4 @@ class TestShiftRepository(unittest.TestCase):
         shift = ShiftRepository().find_shift(self.shift)
         self.assertEqual(shift.date, self.shift.date)
 
-    def test_find_user_shifts(self):
-        shifts = ShiftRepository().find_user_shifts(self.user)
-        print(shifts)
+
