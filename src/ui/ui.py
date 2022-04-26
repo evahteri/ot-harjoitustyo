@@ -31,7 +31,7 @@ class UI:
     
     def _handle_employee_view(self):
         self._hide_current_view()
-        self._show_create_employee_view()
+        self._show_employee_view()
 
     def _handle_employer_view(self):
         pass
@@ -45,14 +45,13 @@ class UI:
     
 
     def _show_create_user_view(self):
-
         self._current_view = CreateUserUi(
             self._root, self._handle_create_user, self._handle_login
         )
         self._current_view.pack()
     
-    def _show_create_employee_view(self):
+    def _show_employee_view(self):
         self._current_view = CreateEmployeeUi(
-            self._root, self._handle_employee_view,
+            self._root, self._handle_login,
         )
         self._current_view.pack()

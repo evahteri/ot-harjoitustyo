@@ -30,7 +30,7 @@ class UserRepository:
     def login(self, username, password):
         cursor = self._connection.cursor()
         cursor.execute(
-            "SELECT * FROM user_database WHERE (username, password)=(?,?)", ([username], [password]))
+            "SELECT * FROM user_database WHERE (username, password)=(?,?)", (username, password))
         row = cursor.fetchone()
 
         return return_user(row)

@@ -6,10 +6,10 @@ from ui import create_user
 
 class LoginUi:
 
-    def __init__(self, root, handle_employee_view, handle_login):
+    def __init__(self, root, handle_employee_view, handle_create_user):
         self._root = root
         self._handle_employee_view = handle_employee_view
-        self._handle_login = handle_login
+        self._handle_create_user = handle_create_user
         self._frame = None
         self._username_entry = StringVar()
         self._password_entry = StringVar()
@@ -53,7 +53,7 @@ class LoginUi:
         login_button.grid(row= 10, column=0)
 
         create_user_button = ttk.Button(
-            master = self._frame, text= "Create new user", command = self._handle_login
+            master = self._frame, text= "Create new user", command = self._handle_create_user
         )
         create_user_button.grid(row = 11, column = 0)
         

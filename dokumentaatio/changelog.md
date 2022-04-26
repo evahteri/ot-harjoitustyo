@@ -26,3 +26,5 @@
 - Luotu toiminnallisuutta vuoron luomiseksi
 - Vuoron luominen onnistuu komentorivin kautta, testi tätä varten luotu
 - UI rakennettu uudelleen näkymien vaihtamiseksi
+- Create user näkymä ilmoittaa uuden käyttäjän luomisesta
+- Create user näkymästä voi palata login näkymään
