@@ -1,5 +1,5 @@
 from tkinter import StringVar, Tk, ttk, constants, messagebox
-from services.shift_app_service import ShiftAppService
+from services.shift_app_service import ShiftAppService, InvalidPassword
 
 
 
@@ -37,21 +37,15 @@ class CreateUserUi:
         
         self.username_entry.grid(row= 3, column=0)
         
-
-
         password_header = ttk.Label(master=self._frame, text="Password")
         password_header.grid(row= 4, column=0)
 
-
         self.password_entry = ttk.Entry(
             master=self._frame, textvariable=self._password_entry)
-        
         self.password_entry.grid(row= 5, column=0)
 
-        
         self.employee_button = ttk.Radiobutton(master=self._frame, text="Employee",variable=self._role, value="Employee")
         self.employee_button.grid(row= 7, column=0)
-
 
         self.employer_button = ttk.Radiobutton(master=self._frame, text="Employer",variable=self._role, value="Employer")
         self.employer_button.grid(row= 8, column=0)
@@ -72,8 +66,11 @@ class CreateUserUi:
     def _handle_button_click(self):
         username = self.username_entry.get()
         password = self.password_entry.get()
-        self._role = self._role.get()
-        self._shiftappservice.create_user(
-            username=username, password=password, role=self._role)
-        messagebox.showinfo(title="User created", message="User created succesfully!")
+        role = self._role.get()
+        try:
+            self._shiftappservice.create_user(
+                username=username, password=password, role=role)
+            messagebox.showinfo(title="User created", message="User created succesfully!")
+        except InvalidPassword:
+            messagebox.showinfo(title="Invalid Password", message="Password should be over 8 characters, include at least one upper- and lowercase letter, a special character and a number")
 

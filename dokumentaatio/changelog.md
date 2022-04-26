@@ -29,4 +29,5 @@
 - Create user näkymä ilmoittaa uuden käyttäjän luomisesta
 - Create user näkymästä voi palata login näkymään
 - Employee näkymä luotu ja siihen siirrytään sisäänkirjautumalla
+- Virheilmoitus näkyy kun väärillä tunnuksilla yritetään kirjautua
 
