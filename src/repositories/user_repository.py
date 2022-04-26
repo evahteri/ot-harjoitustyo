@@ -32,5 +32,7 @@ class UserRepository:
         cursor.execute(
             "SELECT * FROM user_database WHERE (username, password)=(?,?)", (username, password))
         row = cursor.fetchone()
-
-        return return_user(row)
+        if row == None:
+            return None
+        else:
+            return return_user(row)

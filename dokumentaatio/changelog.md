@@ -28,3 +28,5 @@
 - UI rakennettu uudelleen näkymien vaihtamiseksi
 - Create user näkymä ilmoittaa uuden käyttäjän luomisesta
 - Create user näkymästä voi palata login näkymään
+- Employee näkymä luotu ja siihen siirrytään sisäänkirjautumalla
+
