@@ -11,17 +11,17 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
 ## Perusversion tarjoama toiminnallisuus
 ### Ennen kirjautumista
 - Käyttäjä voi luoda käyttäjätunnuksen _tehty_
-  - Salasanan täytyy olla yli 8 merkkiä ja sisältää:
-    - Vähintään yksi iso kirjain
-    - Vähintään yksi pieni kirjain
-    - Vähintään yksi numero
-    - Vähintään yksi erikoismerkki (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.)
+  - Salasanan täytyy olla yli 8 merkkiä ja sisältää: _tehty_
+    - Vähintään yksi iso kirjain _tehty_
+    - Vähintään yksi pieni kirjain _tehty_
+    - Vähintään yksi numero _tehty_
+    - Vähintään yksi erikoismerkki (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.) _tehty_
    - Tunnusta luodessa valitaan rooli työntekijän ja työnantajan välillä _tehty_
-- Käyttäjä voi kirjautua sisään tunnuksella ja salasanalla
-  - Jos käyttäjätunnus tai salasana on väärin, järjestelmä ilmoittaa siitä
+- Käyttäjä voi kirjautua sisään tunnuksella ja salasanalla _tehty_
+  - Jos käyttäjätunnus tai salasana on väärin, järjestelmä ilmoittaa siitä _tehty_
 ### Kirjautumisen jälkeen
 #### Työntekijän rooli
-- Käyttäjä voi valita haluaako nähdä omat vuorot vai vapaat vuorot
+- Käyttäjä voi valita haluaako nähdä omat vuorot vai vapaat vuorot _tehty_
   - Vapaissa vuoroissa näkyy vapaat vuorot ja siitä tiedot:
     - Päivämäärä
     - Aika
