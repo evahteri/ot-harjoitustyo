@@ -20,7 +20,7 @@ class ShiftAppService:
         self._shift_repository = ShiftRepository()
 
     def create_user(self, username, password, role):
-        if self._password_checker(password) == False:
+        if self._password_checker(password) is False:
             raise InvalidPassword("Invalid password")
         new_user = User(username, password, role)
         self._user_repository.create_user(new_user)
@@ -40,7 +40,8 @@ class ShiftAppService:
 
     def _password_checker(self, password):
         special_characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
-                              ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~", "."]
+                              ":", ";", "<", "=", ">", "?", "@", "[", "]",
+                              "^", "_", "`", "{", "|", "}", "~", "."]
         valid = True
         if len(password) < 8:
             valid = False

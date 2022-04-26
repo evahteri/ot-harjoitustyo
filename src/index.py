@@ -1,13 +1,13 @@
-from ui.ui import UI
 from tkinter import Tk
+from ui.ui import UI
 
 
 def main():
     window = Tk()
     window.title("Work Shift App")
 
-    ui = UI(window)
-    ui.start()
+    ui_window = UI(window)
+    ui_window.start()
 
     window.mainloop()
 
