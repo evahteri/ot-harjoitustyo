@@ -21,16 +21,16 @@ class UI:
         self._current_view = None
 
     def _handle_create_user(self):
-        self._current_view.destroy()
+        self._hide_current_view()
         self._show_create_user_view()
 
     
     def _handle_login(self):
-        self._current_view.destroy()
+        self._hide_current_view()
         self._show_login_view()
     
     def _handle_employee_view(self):
-        self._current_view.destroy()
+        self._hide_current_view()
         self._show_create_employee_view()
 
     def _handle_employer_view(self):
@@ -39,7 +39,7 @@ class UI:
     
     def _show_login_view(self):
         self._current_view = LoginUi(
-            self._root, self._handle_employee_view, self._handle_login
+            self._root, self._handle_employee_view, self._handle_create_user
         )
         self._current_view.pack()
     
