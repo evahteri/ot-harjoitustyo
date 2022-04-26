@@ -7,6 +7,8 @@
 
 [Arkkitehtuurikuvaus](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Viikon 5 Release](https://github.com/evahteri/ot-harjoitustyo/releases/tag/viikko5)
+
 ## Asennus
 
 ### Asenna riippuvuudet komennolla 
