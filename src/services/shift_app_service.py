@@ -13,23 +13,61 @@ class InvalidPassword(Exception):
 
 
 class ShiftAppService:
+    """Class that takes care of the application logic
+
+    """
 
     def __init__(self):
+        """Constructor that stores current user and establishes repositories
+
+        """
         self._user = None
         self._user_repository = UserRepository()
         self._shift_repository = ShiftRepository()
 
     def create_user(self, username, password, role):
+        """Creates a user
+
+        Args:
+            username (string): username which user has chosen to use
+            password (string): password that user has chosen to use
+            role (string): choice between employer and employee
+
+        Raises:
+            InvalidPassword: if password doesn't meet the requirements
+        """
+
         if self._password_checker(password) is False:
             raise InvalidPassword("Invalid password")
         new_user = User(username, password, role)
         self._user_repository.create_user(new_user)
 
     def create_shift(self, date, time, location, employee):
+        """Creates a new shift
+
+        Args:
+            date (string): date for the shift (ie. 30.4.2022)
+            time (string): time of day (ie. 6:30 - 12:00)
+            location (string): place that shift takes place
+            employee (string/None): employee for the shift (if this is a avalailable shift, employee arg can be Nonetype)
+        """
         new_shift = Shift(date, time, location, employee)
         self._shift_repository.create_shift(new_shift)
 
     def login(self, username, password):
+        """Logs user in
+
+        Args:
+            username (string): username 
+            password (string): password
+
+        Raises:
+            FailedLoginError: if username and password combination cannot be found in table
+
+        Returns:
+            User: returns a user if login is successful
+        """
+
         self._user = UserRepository().login(username, password)
         if not self._user:
             raise FailedLoginError("Invalid username or password")
@@ -39,6 +77,14 @@ class ShiftAppService:
         return self._user
 
     def _password_checker(self, password):
+        """Checks if password meets safety requirements
+
+        Args:
+            password (string): user input for password
+
+        Returns:
+            Boolean: True if valid, False if not valid
+        """
         special_characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
                               ":", ";", "<", "=", ">", "?", "@", "[", "]",
                               "^", "_", "`", "{", "|", "}", "~", "."]

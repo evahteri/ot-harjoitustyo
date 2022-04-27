@@ -19,4 +19,9 @@
 | 25.4.         | 2             | UI:n täydentämistä eri näkymillä                           |
 | 26.4.         | 4             | UI:n toiminnallisuuden hiomista                            |
 | 26.4.         | 2             | Kirjautumisen ja käyttäjän luominen määrittelyn mukaiseksi |
-|yht.           | 52            |                                                            |
+| 27.4.         | 2             | Docstring dokumentointi                                    |
+|               |               |                                                            |
+|               |               |                                                            |
+|               |               |                                                            |
+|               |               |                                                            | 
+| yht.          | 54            |                                                            |
