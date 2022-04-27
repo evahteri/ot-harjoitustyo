@@ -21,6 +21,7 @@ class ShiftAppService:
         """Constructor that stores current user and establishes repositories
 
         """
+
         self._user = None
         self._user_repository = UserRepository()
         self._shift_repository = ShiftRepository()
@@ -68,13 +69,21 @@ class ShiftAppService:
             User: returns a user if login is successful
         """
 
-        self._user = UserRepository().login(username, password)
-        if not self._user:
+        user = UserRepository().login(username, password)
+        if not user:
             raise FailedLoginError("Invalid username or password")
+        self.set_current_user(user)
         return self._user
 
     def get_current_user(self):
-        return self._user
+        current_user = self._user
+        return current_user
+    
+    def set_current_user(self, user):
+        self._user = user
+    
+    def logout(self):
+        self.set_current_user(None)
 
     def _password_checker(self, password):
         """Checks if password meets safety requirements

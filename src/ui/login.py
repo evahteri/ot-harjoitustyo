@@ -59,6 +59,7 @@ class LoginUi:
         try:
             self._shiftappservice.login(username, password)
             self._handle_employee_view()
+            self._shiftappservice.user = username
         except FailedLoginError:
             messagebox.showerror(title="Login Error",
                                  message="Invalid username or password!")

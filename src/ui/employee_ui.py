@@ -10,7 +10,7 @@ class CreateEmployeeUi:
         self._handle_login = handle_login
         self._frame = None
         self._shiftappservice = ShiftAppService()
-        self._shiftappservice = ShiftAppService()
+        self._user = ShiftAppService().get_current_user()
 
         self._base()
 
@@ -42,11 +42,11 @@ class CreateEmployeeUi:
     def handle_logout_button(self):
         self._handle_login()
 
-
     def handle_available_button_click(self):
         shifts = ShiftRepository().find_available_shifts()
         print(shifts)
 
     def handle_my_shifts_button_click(self):
-        shifts = ShiftRepository().find_user_shifts(user=self.user)
+        current_user = ShiftAppService().get_current_user()
+        shifts = ShiftRepository().find_user_shifts(current_user)
         print(shifts)

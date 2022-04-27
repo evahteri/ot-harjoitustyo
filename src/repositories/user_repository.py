@@ -58,7 +58,7 @@ class UserRepository:
         Returns:
             user (User): User type object
         """
-        
+
         cursor = self._connection.cursor()
         cursor.execute(
             "SELECT * FROM user_database WHERE (username, password)=(?,?)", (username, password))
