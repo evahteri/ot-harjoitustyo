@@ -50,6 +50,6 @@ class UI:
 
     def _show_employee_view(self):
         self._current_view = CreateEmployeeUi(
-            self._root, self._handle_login,
+            self._root, self._handle_login
         )
         self._current_view.pack()

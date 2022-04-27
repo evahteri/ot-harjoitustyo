@@ -20,7 +20,7 @@
 | 26.4.         | 4             | UI:n toiminnallisuuden hiomista                            |
 | 26.4.         | 2             | Kirjautumisen ja käyttäjän luominen määrittelyn mukaiseksi |
 | 27.4.         | 2             | Docstring dokumentointi                                    |
-|               |               |                                                            |
+| 27.4.         | 3             | Employee toiminnallisuutta                                 |
 |               |               |                                                            |
 |               |               |                                                            |
 |               |               |                                                            | 

@@ -35,6 +35,14 @@ class CreateEmployeeUi:
 
         self.my_shifts_button.grid(row=4, column=0)
 
+        self.log_out_button = ttk.Button(
+            master=self._frame, text="Log out", command=self.handle_logout_button)
+        self.log_out_button.grid(row=7, column=0)
+    
+    def handle_logout_button(self):
+        self._handle_login()
+
+
     def handle_available_button_click(self):
         shifts = ShiftRepository().find_available_shifts()
         print(shifts)
