@@ -25,6 +25,11 @@ class ShiftAppService:
         self._user = None
         self._user_repository = UserRepository()
         self._shift_repository = ShiftRepository()
+        
+    @property
+    def get_current_user(self):
+        current_user = self._user
+        return current_user
 
     def create_user(self, username, password, role):
         """Creates a user
@@ -75,10 +80,7 @@ class ShiftAppService:
         self.set_current_user(user)
         return self._user
 
-    def get_current_user(self):
-        current_user = self._user
-        return current_user
-    
+
     def set_current_user(self, user):
         self._user = user
     

@@ -5,14 +5,14 @@ from ui import create_user
 
 class LoginUi:
 
-    def __init__(self, root, handle_employee_view, handle_create_user):
+    def __init__(self, root, handle_employee_view, handle_create_user, shift_app_service):
         self._root = root
         self._handle_employee_view = handle_employee_view
         self._handle_create_user = handle_create_user
         self._frame = None
         self._username_entry = StringVar()
         self._password_entry = StringVar()
-        self._shiftappservice = ShiftAppService()
+        self._shiftappservice = shift_app_service
 
         self._base()
 
@@ -59,7 +59,7 @@ class LoginUi:
         try:
             self._shiftappservice.login(username, password)
             self._handle_employee_view()
-            self._shiftappservice.user = username
+            self._shiftappservice = username
         except FailedLoginError:
             messagebox.showerror(title="Login Error",
                                  message="Invalid username or password!")

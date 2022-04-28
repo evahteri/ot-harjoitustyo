@@ -5,12 +5,12 @@ from repositories.shift_repository import ShiftRepository
 
 class CreateEmployeeUi:
 
-    def __init__(self, root, handle_login):
+    def __init__(self, root, handle_login, shift_app_service):
         self._root = root
         self._handle_login = handle_login
         self._frame = None
-        self._shiftappservice = ShiftAppService()
-        self._user = ShiftAppService().get_current_user()
+        self._shiftappservice = shift_app_service
+        self._shift_repository = ShiftRepository()
 
         self._base()
 
@@ -40,13 +40,13 @@ class CreateEmployeeUi:
         self.log_out_button.grid(row=7, column=0)
     
     def handle_logout_button(self):
+        self._shiftappservice.logout()
         self._handle_login()
 
     def handle_available_button_click(self):
-        shifts = ShiftRepository().find_available_shifts()
+        shifts = self._shiftappservice.find_available_shifts()
         print(shifts)
 
     def handle_my_shifts_button_click(self):
-        current_user = ShiftAppService().get_current_user()
-        shifts = ShiftRepository().find_user_shifts(current_user)
+        shifts = self._shift_repository.find_user_shifts(self._shiftappservice.get_current_user)
         print(shifts)

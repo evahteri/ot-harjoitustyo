@@ -4,7 +4,7 @@ from services.shift_app_service import ShiftAppService, InvalidPassword
 
 class CreateUserUi:
 
-    def __init__(self, root, handle_create_user, handle_login):
+    def __init__(self, root, handle_create_user, handle_login, service):
         self._root = root
         self._handle_create_user = handle_create_user
         self._handle_login = handle_login
@@ -12,7 +12,7 @@ class CreateUserUi:
         self._role = StringVar()
         self._username_entry = StringVar()
         self._password_entry = StringVar()
-        self._shiftappservice = ShiftAppService()
+        self._service = service
 
         self._base()
 
@@ -68,7 +68,7 @@ class CreateUserUi:
         password = self.password_entry.get()
         role = self._role.get()
         try:
-            self._shiftappservice.create_user(
+            self._service.create_user(
                 username=username, password=password, role=role)
             messagebox.showinfo(title="User created",
                                 message="User created succesfully!")
