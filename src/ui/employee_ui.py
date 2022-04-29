@@ -5,9 +5,10 @@ from repositories.shift_repository import ShiftRepository
 
 class CreateEmployeeUi:
 
-    def __init__(self, root, handle_login, shift_app_service):
+    def __init__(self, root, handle_login, handle_shift_view, shift_app_service):
         self._root = root
         self._handle_login = handle_login
+        self._handle_shift_view = handle_shift_view
         self._frame = None
         self._shiftappservice = shift_app_service
         self._shift_repository = ShiftRepository()
@@ -44,8 +45,7 @@ class CreateEmployeeUi:
         self._handle_login()
 
     def handle_available_button_click(self):
-        shifts = self._shiftappservice.find_available_shifts()
-        print(shifts)
+        self._handle_shift_view()
 
     def handle_my_shifts_button_click(self):
         shifts = self._shift_repository.find_user_shifts(self._shiftappservice.get_current_user)
