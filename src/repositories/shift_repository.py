@@ -5,6 +5,12 @@ from shift_db_connection import get_shift_db_connection
 def return_shift(row):
     return Shift(row["date"], row["time"], row["location"], row["employee"])
 
+def return_multiple_shifts(rows):
+    data = []
+    for row in rows:
+        data.append((row["date"], row["time"],row["location"], row["employee"]))
+    return data
+
 
 class ShiftRepository:
     """Class for handling shifts
@@ -74,8 +80,8 @@ class ShiftRepository:
         cursor = self._connection.cursor()
         cursor.execute(
             "SELECT * FROM shift_database")
-        row = cursor.fetchall()
-        return list(return_shift(row))
+        rows = cursor.fetchall()
+        return return_multiple_shifts(rows)
 
     def find_available_shifts(self):
         """Finds all shifts that are not assigned to any employee

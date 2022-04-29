@@ -3,9 +3,10 @@ from services.shift_app_service import ShiftAppService
 from repositories.shift_repository import ShiftRepository
 
 class ShiftView:
-    def __init__(self, root, handle_employee_view, shift_app_service):
+    def __init__(self, root, handle_employee_view, shift_app_service, rows):
         self._root = root
         self._employee_view = handle_employee_view
+        self.rows = rows
         self._frame = None
         self._shift_app_service = shift_app_service
         self._shift_repository = ShiftRepository()
@@ -27,3 +28,7 @@ class ShiftView:
         self._table.heading(2, text="Time")
         self._table.heading(3, text="Location")
         self._table.heading(4, text="Employee")
+
+        for row in self.rows:
+            self._table.insert(parent="", index= "end", values=(row[0], row[1], row[2], row[3]))
+

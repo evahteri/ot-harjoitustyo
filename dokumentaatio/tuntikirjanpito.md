@@ -22,6 +22,6 @@
 | 27.4.         | 2             | Docstring dokumentointi                                    |
 | 27.4.         | 3             | Employee toiminnallisuutta                                 |
 | 28.4.         | 2             | UI korjauksia ja luokkien käytön parantamista              |
-|               |               |                                                            |
+| 29.4.         | 2             | Vuoroille luotu oma näkymä                                 |
 |               |               |                                                            | 
-| yht.          | 59            |                                                            |
+| yht.          | 61            |                                                            |

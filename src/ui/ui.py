@@ -38,9 +38,9 @@ class UI:
     def _handle_employer_view(self):
         pass
 
-    def _handle_shift_view(self):
+    def _handle_shift_view(self, rows):
         self._hide_current_view()
-        self._show_shift_view()
+        self._show_shift_view(rows)
 
     def _show_login_view(self):
         self._current_view = LoginUi(
@@ -60,8 +60,8 @@ class UI:
         )
         self._current_view.pack()
 
-    def _show_shift_view(self):
+    def _show_shift_view(self, rows):
         self._current_view = ShiftView(
-            self._root, self._handle_employee_view, self._shift_app_service
+            self._root, self._handle_employee_view, self._shift_app_service, rows
         )
         self._current_view.pack()
