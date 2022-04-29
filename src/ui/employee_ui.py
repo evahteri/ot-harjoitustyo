@@ -45,7 +45,7 @@ class CreateEmployeeUi:
         self._handle_login()
 
     def handle_available_button_click(self):
-        rows = self._shift_repository.find_all_shifts()
+        rows = self._shift_repository.find_available_shifts()
         self._handle_shift_view(rows)
 
     def handle_my_shifts_button_click(self):

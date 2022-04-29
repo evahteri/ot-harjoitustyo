@@ -92,5 +92,5 @@ class ShiftRepository:
         cursor = self._connection.cursor()
         cursor.execute(
             "SELECT * FROM shift_database WHERE employee = NULL")
-        row = cursor.fetchall()
-        return list(row)
+        rows = cursor.fetchall()
+        return return_multiple_shifts(rows) 
