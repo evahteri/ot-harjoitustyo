@@ -33,3 +33,10 @@
 - Virheilmoitus näkyy kun yritetään luoda käyttäjä liian heikolla salasanalla
 - Testi sisäänkirjautumista varten luotu
 
+# Viikko 6
+- Docstring dokumentaatio aloitettu
+- Logout button lisätty employee näkymään
+- Näkymä vuorojen tarkastelulle luotu
+- Käyttäjä näkee nyt omat vuorot sekä vapaat vuorot eri nappien kautta
+- Näkymien välillä voi siirtyä
+

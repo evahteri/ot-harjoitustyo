@@ -22,13 +22,13 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
 ### Kirjautumisen jälkeen
 #### Työntekijän rooli
 - Käyttäjä voi valita haluaako nähdä omat vuorot vai vapaat vuorot _tehty_
-  - Vapaissa vuoroissa näkyy vapaat vuorot ja siitä tiedot:
-    - Päivämäärä
-    - Aika
-    - Paikka
+  - Vapaissa vuoroissa näkyy vapaat vuorot ja siitä tiedot: _tehty_
+    - Päivämäärä 
+    - Aika 
+    - Paikka 
     - "Choose shift" -nappula jolloin vuoro siirtyy omiin vuoroihin
-  - Omissa vuoroissa näkyy valitut vuorot
-- Käyttäjä voi kirjautua ulos
+  - Omissa vuoroissa näkyy valitut vuorot _tehty_
+- Käyttäjä voi kirjautua ulos _tehty_
 #### Työnantajan rooli
 - Käyttäjä voi luoda uuden vuoron
   - Uusi vuoro -lomake kysyy tiedot
