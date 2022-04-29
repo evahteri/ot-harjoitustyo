@@ -67,8 +67,8 @@ class ShiftRepository:
         cursor = self._connection.cursor()
         cursor.execute(
             "SELECT * FROM shift_database WHERE employee = ?", [user.username])
-        row = cursor.fetchall()
-        return list(row)
+        rows = cursor.fetchall()
+        return return_multiple_shifts(rows)
 
     def find_all_shifts(self):
         """Find all shifts from the table

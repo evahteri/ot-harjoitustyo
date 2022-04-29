@@ -21,8 +21,7 @@ class ShiftView:
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
-        self._table = ttk.Treeview(master=self._root, columns=(1,2,3,4), show="headings")
-        self._table.grid(row=0, column=0)
+        self._table = ttk.Treeview(master=self._frame, columns=(1,2,3,4), show="headings")
 
         self._table.heading(1, text="Date")
         self._table.heading(2, text="Time")
@@ -32,3 +31,10 @@ class ShiftView:
         for row in self.rows:
             self._table.insert(parent="", index= "end", values=(row[0], row[1], row[2], row[3]))
 
+        self._table.grid(row=0, column=0)
+
+        self.back_button = ttk.Button(master=self._frame, text="Back", command=self.handle_back_button)
+        self.back_button.grid(row=1, column=0)
+    
+    def handle_back_button(self):
+        self._employee_view()

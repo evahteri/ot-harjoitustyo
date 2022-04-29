@@ -50,4 +50,4 @@ class CreateEmployeeUi:
 
     def handle_my_shifts_button_click(self):
         shifts = self._shift_repository.find_user_shifts(self._shiftappservice.get_current_user)
-        print(shifts)
+        self._handle_shift_view(shifts)
