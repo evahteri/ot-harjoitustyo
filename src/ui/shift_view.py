@@ -33,8 +33,14 @@ class ShiftView:
 
         self._table.grid(row=0, column=0)
 
+        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shifts", command=self.handle_select_shift_button)
+        self.select_shift_button.grid(row=1, column=0)
+
         self.back_button = ttk.Button(master=self._frame, text="Back", command=self.handle_back_button)
-        self.back_button.grid(row=1, column=0)
+        self.back_button.grid(row=3, column=0)
     
     def handle_back_button(self):
         self._employee_view()
+    
+    def handle_select_shift_button(self):
+        print(self._table.selection())
