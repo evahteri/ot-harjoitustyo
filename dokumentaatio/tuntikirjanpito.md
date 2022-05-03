@@ -23,5 +23,5 @@
 | 27.4.         | 3             | Employee toiminnallisuutta                                 |
 | 28.4.         | 2             | UI korjauksia ja luokkien käytön parantamista              |
 | 29.4.         | 2             | Vuoroille luotu oma näkymä                                 |
-|               |               |                                                            | 
+| 3.5.          | 2             | Testejä lisää shift repositorylle                          | 
 | yht.          | 61            |                                                            |
