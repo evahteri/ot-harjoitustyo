@@ -35,9 +35,9 @@ class CreateDatabases:
 
         cursor = self.shift_connection.cursor()
         cursor.execute("CREATE TABLE shift_database \
-            (date TEXT NOT NULL, \
-            time TEXT NOT NULL, \
-            location TEXT NOT NULL, \
+            (date TEXT, \
+            time TEXT, \
+            location TEXT, \
             employee TEXT)")
         self.shift_connection.commit()
         cursor.close()

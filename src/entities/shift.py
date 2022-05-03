@@ -1,4 +1,6 @@
 class Shift:
+    """Class for shift object
+    """
 
     def __init__(self, date, time, location, employee):
         """Constructor that creates a shift type object

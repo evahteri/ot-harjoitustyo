@@ -61,7 +61,7 @@ class ShiftRepository:
             user (string): name of the user which shifts are searched
 
         Returns:
-            list: list of the shifts (PLACEHOLDER)
+            Shifts in a list through another function
         """
 
         cursor = self._connection.cursor()
@@ -74,7 +74,7 @@ class ShiftRepository:
         """Find all shifts from the table
 
         Returns:
-            list: list object including all shifts (PLACEHOLDER)
+            Shifts in a list through another function
         """
 
         cursor = self._connection.cursor()
@@ -91,6 +91,7 @@ class ShiftRepository:
         """
         cursor = self._connection.cursor()
         cursor.execute(
-            "SELECT * FROM shift_database WHERE employee = NULL")
+            "SELECT * FROM shift_database WHERE employee IS NULL")
         rows = cursor.fetchall()
+        print(return_multiple_shifts(rows))
         return return_multiple_shifts(rows) 
