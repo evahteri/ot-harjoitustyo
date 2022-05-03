@@ -12,6 +12,8 @@
 
 [Viikon 5 Release](https://github.com/evahteri/ot-harjoitustyo/releases/tag/viikko5)
 
+[Viikon 6 Release](https://github.com/evahteri/ot-harjoitustyo/releases/tag/viikko6)
+
 ## Asennus
 
 ### Asenna riippuvuudet komennolla 
