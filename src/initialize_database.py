@@ -4,7 +4,7 @@ from shift_db_connection import get_shift_db_connection
 
 class CreateDatabases:
     """Class that creates databases
-    
+
     """
 
     def __init__(self):
@@ -46,7 +46,7 @@ class CreateDatabases:
         """Runs both functions to establish databases
 
         """
-        
+
         self.create_user_database()
         self.create_shift_database()
 

@@ -25,7 +25,7 @@ class ShiftAppService:
         self._user = None
         self._user_repository = UserRepository()
         self._shift_repository = ShiftRepository()
-        
+
     @property
     def get_current_user(self):
         current_user = self._user
@@ -55,7 +55,8 @@ class ShiftAppService:
             date (string): date for the shift (ie. 30.4.2022)
             time (string): time of day (ie. 6:30 - 12:00)
             location (string): place that shift takes place
-            employee (string/None): employee for the shift (if this is a avalailable shift, employee arg can be Nonetype)
+            employee (string/None): employee for the shift (if this is a avalailable shift,
+            employee arg can be Nonetype)
         """
         new_shift = Shift(date, time, location, employee)
         self._shift_repository.create_shift(new_shift)
@@ -64,7 +65,7 @@ class ShiftAppService:
         """Logs user in
 
         Args:
-            username (string): username 
+            username (string): username
             password (string): password
 
         Raises:
@@ -83,7 +84,7 @@ class ShiftAppService:
 
     def set_current_user(self, user):
         self._user = user
-    
+
     def logout(self):
         self.set_current_user(None)
 
