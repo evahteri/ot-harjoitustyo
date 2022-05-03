@@ -3,7 +3,17 @@ from services.shift_app_service import ShiftAppService
 from repositories.shift_repository import ShiftRepository
 
 class ShiftView:
+    """Class that is responsible for viewing shifts
+    """
     def __init__(self, root, handle_employee_view, shift_app_service, rows):
+        """Constructor that establishes which rows to show and services
+
+        Args:
+            root (Tk()): Tk() object from ui
+            handle_employee_view (function): Function that hides current view and shows employee view
+            shift_app_service (class): Service that had been established in UI class
+            rows (list): List that includes shifts
+        """
         self._root = root
         self._employee_view = handle_employee_view
         self.rows = rows
