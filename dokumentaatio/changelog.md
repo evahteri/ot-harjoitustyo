@@ -40,3 +40,4 @@
 - Käyttäjä näkee nyt omat vuorot sekä vapaat vuorot eri nappien kautta
 - Näkymien välillä voi siirtyä
 - Lisätty testit työntekijän vuorojen löytämiselle ja vapaiden vuorojen löytämiselle
+- Alustava käyttöohje tehty
