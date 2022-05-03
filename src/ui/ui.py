@@ -8,13 +8,22 @@ from ui.shift_view import ShiftView
 
 
 class UI:
+    """Class that controls all ui elements
+    """
 
     def __init__(self, root):
+        """Constructor that establishes ShiftAppService and current view which is at start None.
+
+        Args:
+            root (Tk() object): window that has been created in index.py.
+        """
         self._root = root
         self._current_view = None
         self._shift_app_service = ShiftAppService()
 
     def start(self):
+        """Function to handle start. In this case the first view is login view.
+        """
         self._show_login_view()
 
     def _hide_current_view(self):

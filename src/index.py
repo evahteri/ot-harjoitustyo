@@ -3,6 +3,9 @@ from ui.ui import UI
 
 
 def main():
+    """Function that launches user interface using ui.py
+
+    """
     window = Tk()
     window.title("Work Shift App")
 
