@@ -11,6 +11,9 @@ class FailedLoginError(Exception):
 class InvalidPassword(Exception):
     pass
 
+class InvalidShiftInformation(Exception):
+    pass
+
 
 class ShiftAppService:
     """Class that takes care of the application logic
@@ -58,6 +61,9 @@ class ShiftAppService:
             employee (string/None): employee for the shift (if this is a avalailable shift,
             employee arg can be Nonetype)
         """
+        if len(date) == 0 or len(time) == 0 or len(location) == 0:
+            raise InvalidShiftInformation("Invalid shift information")
+        
         new_shift = Shift(date, time, location, employee)
         self._shift_repository.create_shift(new_shift)
 

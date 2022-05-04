@@ -30,15 +30,15 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
   - Omissa vuoroissa näkyy valitut vuorot _tehty_
 - Käyttäjä voi kirjautua ulos _tehty_
 #### Työnantajan rooli
-- Käyttäjä voi luoda uuden vuoron
-  - Uusi vuoro -lomake kysyy tiedot
+- Käyttäjä voi luoda uuden vuoron _tehty_
+  - Uusi vuoro -lomake kysyy tiedot _tehty_
     - Päivämäärä
     - Aika
     - Paikka
-   - "Create Shift" -nappulalla uusi vuoro siirtyy vapaisiin vuoroihin
-- Käyttäjä voi nähdä kaikki vuorot
+   - "Create Shift" -nappulalla uusi vuoro luodaan _tehty_
+- Käyttäjä voi nähdä kaikki vuorot _tehty_
   - Käyttäjä voi poistaa vuoron
-- Käyttäjä voi kirjautua ulos
+- Käyttäjä voi kirjautua ulos _tehty_
 
 ## Jatkokehitysideoita
 - Työnantaja pystyy muokata olemassaolevia vuoroja
@@ -46,7 +46,7 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
 - Omien työvuorojen organisointi tehtyihin ja tuleviin
 - Työvuorojen lajittelu ja järjestys eri kriteereillä
 - Käyttäjän ja tietojen poistaminen
-- Työnantaja voi suoraan määrätä työntekijälle vuoroja
+- Työnantaja voi suoraan määrätä työntekijälle vuoroja _tehty_
 
 
   

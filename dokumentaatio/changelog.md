@@ -41,3 +41,9 @@
 - Näkymien välillä voi siirtyä
 - Lisätty testit työntekijän vuorojen löytämiselle ja vapaiden vuorojen löytämiselle
 - Alustava käyttöohje tehty
+
+# Viikko 7
+- Employer näkymä luotu
+- Create shift näkymä luotu
+- Vuoron luominen graafisen käyttöliittymän kautta onnistuu
+- Työnantaja näkee kaikki vuorot

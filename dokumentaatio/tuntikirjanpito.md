@@ -25,4 +25,6 @@
 | 29.4.         | 2             | Vuoroille luotu oma näkymä                                 |
 | 3.5.          | 2             | Testejä lisää shift repositorylle                          | 
 | 3.5.          | 2             | Käyttöohje ja dokumentaation täydennys                     |
-| yht.          | 65            |                                                            |
+| 4.5.          | 1             | Työnantajan ui näkymän tekeminen                           | 
+| 4.5.          | 2             | Vuoron luomisen ui:n tekeminen                             |
+|yht.           | 68            |                                                            |
