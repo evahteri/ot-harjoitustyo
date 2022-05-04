@@ -27,4 +27,5 @@
 | 3.5.          | 2             | Käyttöohje ja dokumentaation täydennys                     |
 | 4.5.          | 1             | Työnantajan ui näkymän tekeminen                           | 
 | 4.5.          | 2             | Vuoron luomisen ui:n tekeminen                             |
-|yht.           | 68            |                                                            |
+| 4.5.          | 1             | Kahden samannimisen käyttäjän tekeminen estetty            |
+|yht.           | 69            |                                                            |

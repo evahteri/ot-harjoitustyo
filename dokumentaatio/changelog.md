@@ -47,3 +47,4 @@
 - Create shift näkymä luotu
 - Vuoron luominen graafisen käyttöliittymän kautta onnistuu
 - Työnantaja näkee kaikki vuorot
+- Kahta samannimistä käyttäjää ei pysty enää luoda
