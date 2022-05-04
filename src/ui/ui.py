@@ -4,6 +4,7 @@ from ui.login import LoginUi
 from tkinter import Tk
 
 from ui.employee_ui import CreateEmployeeUi
+from ui.employer_ui import CreateEmployerUi
 from ui.shift_view import ShiftView
 
 
@@ -43,9 +44,11 @@ class UI:
     def _handle_employee_view(self):
         self._hide_current_view()
         self._show_employee_view()
-
+    
     def _handle_employer_view(self):
-        pass
+        self._hide_current_view()
+        self._show_employer_view()
+
 
     def _handle_shift_view(self, rows):
         self._hide_current_view()
@@ -53,7 +56,7 @@ class UI:
 
     def _show_login_view(self):
         self._current_view = LoginUi(
-            self._root, self._handle_employee_view, self._handle_create_user, self._shift_app_service
+            self._root,self._handle_employee_view, self._handle_create_user, self._handle_employer_view, self._shift_app_service
         )
         self._current_view.pack()
 
@@ -68,7 +71,12 @@ class UI:
             self._root, self._handle_login, self._handle_shift_view, self._shift_app_service
         )
         self._current_view.pack()
-
+    
+    def _show_employer_view(self):
+        self._current_view = CreateEmployerUi(
+            self._root, self._handle_login, self._handle_shift_view,None, self._shift_app_service
+        )
+        self._current_view.pack()
     def _show_shift_view(self, rows):
         self._current_view = ShiftView(
             self._root, self._handle_employee_view, self._shift_app_service, rows

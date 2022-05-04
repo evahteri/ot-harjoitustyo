@@ -1,13 +1,13 @@
 from tkinter import StringVar, Tk, ttk, constants, messagebox
-from services.shift_app_service import ShiftAppService, FailedLoginError
-from ui import create_user
+from services.shift_app_service import FailedLoginError
 
 
 class LoginUi:
 
-    def __init__(self, root, handle_employee_view, handle_create_user, shift_app_service):
+    def __init__(self, root, handle_employee_view, handle_create_user,handle_employer_view, shift_app_service):
         self._root = root
         self._handle_employee_view = handle_employee_view
+        self._handle_employer_view = handle_employer_view
         self._handle_create_user = handle_create_user
         self._frame = None
         self._username_entry = StringVar()
@@ -58,8 +58,11 @@ class LoginUi:
         password = self.password_entry.get()
         try:
             self._shiftappservice.login(username, password)
-            self._handle_employee_view()
-            self._shiftappservice = username
+            user = self._shiftappservice.get_current_user
+            if user.role == "employee":
+                self._handle_employee_view()
+            else:
+                self._handle_employer_view()
         except FailedLoginError:
             messagebox.showerror(title="Login Error",
                                  message="Invalid username or password!")
