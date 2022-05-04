@@ -14,6 +14,8 @@ class InvalidPassword(Exception):
 class InvalidShiftInformation(Exception):
     pass
 
+class UsernameExistsError(Exception):
+    pass
 
 class ShiftAppService:
     """Class that takes care of the application logic
@@ -48,6 +50,8 @@ class ShiftAppService:
 
         if self._password_checker(password) is False:
             raise InvalidPassword("Invalid password")
+        if self._user_repository.find_user(username=username):
+            raise UsernameExistsError(f"User {username} already exists!")
         new_user = User(username, password, role)
         self._user_repository.create_user(new_user)
 

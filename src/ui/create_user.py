@@ -1,5 +1,6 @@
+from re import T
 from tkinter import StringVar, Tk, ttk, constants, messagebox
-from services.shift_app_service import ShiftAppService, InvalidPassword
+from services.shift_app_service import InvalidPassword, UsernameExistsError
 
 
 class CreateUserUi:
@@ -74,4 +75,10 @@ class CreateUserUi:
                                 message="User created succesfully!")
         except InvalidPassword:
             messagebox.showinfo(
-                title="Invalid Password", message="Password should be over 8 characters, include at least one upper- and lowercase letter, a special character and a number")
+                title="Invalid Password", message="Password should be over 8 characters, include at least one upper- and lowercase letter, a special character and a number"
+                )
+        
+        except UsernameExistsError:
+            messagebox.showerror(title="Username exists",
+                message= f"User {username} already exists!"
+            )
