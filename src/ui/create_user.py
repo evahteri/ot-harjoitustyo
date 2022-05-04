@@ -1,6 +1,5 @@
-from re import T
 from tkinter import StringVar, Tk, ttk, constants, messagebox
-from services.shift_app_service import InvalidPassword, UsernameExistsError
+from services.shift_app_service import InvalidPassword, UsernameExistsError, UsernameTooShortError, NoRoleError
 
 
 class CreateUserUi:
@@ -73,6 +72,15 @@ class CreateUserUi:
                 username=username, password=password, role=role)
             messagebox.showinfo(title="User created",
                                 message="User created succesfully!")
+
+        except UsernameTooShortError:
+            messagebox.showerror(title="Username too short",
+            message= "Username is too short, please provide a username longer than 2 characters"
+            )
+        
+        except NoRoleError:
+            messagebox.showerror(title="No role chosen", message= "Please choose a role")
+
         except InvalidPassword:
             messagebox.showinfo(
                 title="Invalid Password", message="Password should be over 8 characters, include at least one upper- and lowercase letter, a special character and a number"
@@ -82,3 +90,4 @@ class CreateUserUi:
             messagebox.showerror(title="Username exists",
                 message= f"User {username} already exists!"
             )
+

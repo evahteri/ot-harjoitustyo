@@ -47,7 +47,9 @@ class UserRepository:
         cursor.execute(
             "SELECT * FROM user_database WHERE username=?", [username])
         row = cursor.fetchone()
-        return return_user(row)
+        if row:
+            return return_user(row)
+        return False
 
     def login(self, username, password):
         """Login user

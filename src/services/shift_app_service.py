@@ -17,6 +17,12 @@ class InvalidShiftInformation(Exception):
 class UsernameExistsError(Exception):
     pass
 
+class UsernameTooShortError(Exception):
+    pass
+
+class NoRoleError(Exception):
+    pass
+
 class ShiftAppService:
     """Class that takes care of the application logic
 
@@ -47,11 +53,15 @@ class ShiftAppService:
         Raises:
             InvalidPassword: if password doesn't meet the requirements
         """
-
-        if self._password_checker(password) is False:
+        if len(username) < 3:
+            raise UsernameTooShortError("Username is too short")
+        if role == "":
+            raise NoRoleError("No role chosen")
+        if self._check_password_validity(password) is False:
             raise InvalidPassword("Invalid password")
         if self._user_repository.find_user(username=username):
             raise UsernameExistsError(f"User {username} already exists!")
+
         new_user = User(username, password, role)
         self._user_repository.create_user(new_user)
 
@@ -98,7 +108,7 @@ class ShiftAppService:
     def logout(self):
         self.set_current_user(None)
 
-    def _password_checker(self, password):
+    def _check_password_validity(self, password):
         """Checks if password meets safety requirements
 
         Args:
