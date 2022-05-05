@@ -47,7 +47,7 @@ class CreateEmployerUi:
 
     def handle_show_all_button_click(self):
         rows = self._shift_repository.find_all_shifts()
-        self._handle_shift_view(rows)
+        self._handle_shift_view(rows, False)
 
     def handle_create_new_shift_button_click(self):
         self._handle_create_new_shift()

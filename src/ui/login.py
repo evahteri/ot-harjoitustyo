@@ -59,7 +59,7 @@ class LoginUi:
         try:
             self._shiftappservice.login(username, password)
             user = self._shiftappservice.get_current_user
-            if user.role == "employee":
+            if user.role == "Employee":
                 self._handle_employee_view()
             else:
                 self._handle_employer_view()

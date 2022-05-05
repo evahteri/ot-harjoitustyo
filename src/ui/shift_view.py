@@ -5,7 +5,7 @@ from repositories.shift_repository import ShiftRepository
 class ShiftView:
     """Class that is responsible for viewing shifts
     """
-    def __init__(self, root, handle_employee_view, shift_app_service, rows):
+    def __init__(self, root, handle_employee_view, handle_employer_view, shift_app_service, rows, choose_button):
         """Constructor that establishes which rows to show and services
 
         Args:
@@ -16,10 +16,12 @@ class ShiftView:
         """
         self._root = root
         self._employee_view = handle_employee_view
+        self._employer_view = handle_employer_view
         self.rows = rows
         self._frame = None
         self._shift_app_service = shift_app_service
         self._shift_repository = ShiftRepository()
+        self._choose_button = choose_button
 
         self._base()
 
@@ -43,14 +45,22 @@ class ShiftView:
 
         self._table.grid(row=0, column=0)
 
-        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shifts", command=self.handle_select_shift_button)
-        self.select_shift_button.grid(row=1, column=0)
+        if self._choose_button is True:
+            self._initialize_select_shift_button()
 
         self.back_button = ttk.Button(master=self._frame, text="Back", command=self.handle_back_button)
         self.back_button.grid(row=3, column=0)
+    
+    def _initialize_select_shift_button(self):
+        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shifts", command=self.handle_select_shift_button)
+        self.select_shift_button.grid(row=1, column=0)
+        
 
     def handle_back_button(self):
-        self._employee_view()
+        if self._shift_app_service.get_current_user.role == "Employee":
+            self._employee_view()
+        else:
+            self._employer_view()
 
     def handle_select_shift_button(self):
         print(self._table.selection())

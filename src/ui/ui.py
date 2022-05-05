@@ -54,9 +54,9 @@ class UI:
         self._hide_current_view()
         self._show_create_shift_view()
 
-    def _handle_shift_view(self, rows):
+    def _handle_shift_view(self, rows, choose_button):
         self._hide_current_view()
-        self._show_shift_view(rows)
+        self._show_shift_view(rows, choose_button)
 
     def _show_login_view(self):
         self._current_view = LoginUi(
@@ -87,8 +87,8 @@ class UI:
             self._root, self._handle_login, self._handle_shift_view,self._handle_create_shift_view, self._shift_app_service
         )
         self._current_view.pack()
-    def _show_shift_view(self, rows):
+    def _show_shift_view(self, rows, choose_button):
         self._current_view = ShiftView(
-            self._root, self._handle_employee_view, self._shift_app_service, rows
+            self._root, self._handle_employee_view, self._handle_employer_view,  self._shift_app_service, rows, choose_button
         )
         self._current_view.pack()
