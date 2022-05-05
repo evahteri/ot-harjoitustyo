@@ -28,4 +28,5 @@
 | 4.5.          | 1             | Työnantajan ui näkymän tekeminen                           | 
 | 4.5.          | 2             | Vuoron luomisen ui:n tekeminen                             |
 | 4.5.          | 1             | Kahden samannimisen käyttäjän tekeminen estetty            |
-|yht.           | 69            |                                                            |
+| 5.5.          | 1             | Shift UI parannuksia                                       |
+|yht.           | 70            |                                                            |

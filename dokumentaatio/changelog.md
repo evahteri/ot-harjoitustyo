@@ -48,3 +48,5 @@
 - Vuoron luominen graafisen käyttöliittymän kautta onnistuu
 - Työnantaja näkee kaikki vuorot
 - Kahta samannimistä käyttäjää ei pysty enää luoda
+- Shift näkymän choose -button näkyy nyt vain relevantissa näkymässä
+- Shift näkymän back -button toiminto palaa nyt oikeaan näkymään
