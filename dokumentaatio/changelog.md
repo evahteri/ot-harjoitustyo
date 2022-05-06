@@ -50,3 +50,5 @@
 - Kahta samannimistä käyttäjää ei pysty enää luoda
 - Shift näkymän choose -button näkyy nyt vain relevantissa näkymässä
 - Shift näkymän back -button toiminto palaa nyt oikeaan näkymään
+- Vuorojen taulukkoon lisätty "shift id" jonka mukaan tunnistaa uniikit vuorot
+

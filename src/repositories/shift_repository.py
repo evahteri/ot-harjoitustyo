@@ -8,7 +8,7 @@ def return_shift(row):
 def return_multiple_shifts(rows):
     data = []
     for row in rows:
-        data.append((row["date"], row["time"],row["location"], row["employee"]))
+        data.append((row["shift_id"], row["date"], row["time"],row["location"], row["employee"]))
     return data
 
 
@@ -99,11 +99,10 @@ class ShiftRepository:
         cursor.close()
         return return_multiple_shifts(rows)
     
-    def choose_shift(self,shift, user):
+    def choose_shift(self,shift_id, user):
         cursor = self._connection.cursor()
         cursor.execute("UPDATE shift_database SET employee = ? \
-            WHERE (date, time, location, employee)=(?,?,?,?)", (user.username, shift.date, shift.time, shift.location, shift.employee))
+            WHERE shift_id = ?", 
+            (user.username, shift_id))
         self._connection.commit()
         cursor.close()
-        print("success")
-

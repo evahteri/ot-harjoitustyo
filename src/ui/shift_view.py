@@ -34,8 +34,9 @@ class ShiftView:
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
-        self._table = ttk.Treeview(master=self._frame, columns=(1,2,3,4), show="headings")
+        self._table = ttk.Treeview(master=self._frame, columns=(0,1,2,3,4), show="headings")
 
+        self._table.heading(0, text="id")
         self._table.heading(1, text="Date")
         self._table.heading(2, text="Time")
         self._table.heading(3, text="Location")
@@ -65,10 +66,6 @@ class ShiftView:
 
     def handle_select_shift_button(self):
         row = self._table.item(self._table.selection())
-        date = row["values"][0]
-        time = row["values"][1]
-        location = row["values"][2]
-        employee = row["values"][3]
-        shift = Shift(date,time,location, employee)
-        self._shift_app_service.choose_shift(shift)
+        shift_id = row["values"][0]
+        self._shift_app_service.choose_shift(shift_id)
 
