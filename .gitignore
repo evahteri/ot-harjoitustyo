@@ -3,4 +3,5 @@ __pycache__
 .coverage
 htmlcov
 users.db
+shifts.db
 dummytest.py
