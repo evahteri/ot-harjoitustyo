@@ -109,10 +109,7 @@ class ShiftAppService:
         self.set_current_user(None)
 
     def choose_shift(self, shift_id):
-        if shift_id is None:
-            raise IncorrectSelection("No shift selected")
-        else:
-            self._shift_repository.choose_shift(shift_id, self._user)
+        self._shift_repository.choose_shift(shift_id, self._user)
 
     def _check_password_validity(self, password):
         """Checks if password meets safety requirements

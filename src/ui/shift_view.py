@@ -1,5 +1,5 @@
 from tkinter import StringVar, Tk, ttk, constants, messagebox
-from services.shift_app_service import ShiftAppService, IncorrectSelection
+from services.shift_app_service import ShiftAppService
 from repositories.shift_repository import ShiftRepository
 from entities.shift import Shift
 
@@ -69,6 +69,9 @@ class ShiftView:
             row = self._table.item(self._table.selection())
             shift_id = row["values"][0]
             self._shift_app_service.choose_shift(shift_id)
+            messagebox.showinfo(title="Shift chosen",
+                                message="The shift is now yours!")
+            self._employee_view()
         except IndexError:
             messagebox.showerror(title="No shift chosen",
             message= "You did not select any shift"
