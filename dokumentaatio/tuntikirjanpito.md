@@ -29,5 +29,5 @@
 | 4.5.          | 2             | Vuoron luomisen ui:n tekeminen                             |
 | 4.5.          | 1             | Kahden samannimisen käyttäjän tekeminen estetty            |
 | 5.5.          | 1             | Shift UI parannuksia                                       |
-| 6.5.          | 3             | Choose shift toiminnallisuuden tekemistä                   |
-| yht.          | 73            |                                                            |
+| 6.5.          | 5             | Choose shift toiminnallisuuden tekemistä                   |
+| yht.          | 75            |                                                            |

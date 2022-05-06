@@ -1,5 +1,5 @@
-from tkinter import StringVar, Tk, ttk, constants
-from services.shift_app_service import ShiftAppService
+from tkinter import StringVar, Tk, ttk, constants, messagebox
+from services.shift_app_service import ShiftAppService, IncorrectSelection
 from repositories.shift_repository import ShiftRepository
 from entities.shift import Shift
 
@@ -50,22 +50,28 @@ class ShiftView:
         if self._choose_button is True:
             self._initialize_select_shift_button()
 
-        self.back_button = ttk.Button(master=self._frame, text="Back", command=self.handle_back_button)
+        self.back_button = ttk.Button(master=self._frame, text="Back", command=self._handle_back_button)
         self.back_button.grid(row=3, column=0)
     
     def _initialize_select_shift_button(self):
-        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shift", command=self.handle_select_shift_button)
+        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shift", command=self._handle_select_shift_button)
         self.select_shift_button.grid(row=1, column=0)
         
 
-    def handle_back_button(self):
+    def _handle_back_button(self):
         if self._shift_app_service.get_current_user.role == "Employee":
             self._employee_view()
         else:
             self._employer_view()
 
-    def handle_select_shift_button(self):
-        row = self._table.item(self._table.selection())
-        shift_id = row["values"][0]
-        self._shift_app_service.choose_shift(shift_id)
+    def _handle_select_shift_button(self):
+        try:
+            row = self._table.item(self._table.selection())
+            shift_id = row["values"][0]
+            self._shift_app_service.choose_shift(shift_id)
+        except IndexError:
+            messagebox.showerror(title="No shift chosen",
+            message= "You did not select any shift"
+            )
+
 

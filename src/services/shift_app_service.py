@@ -7,7 +7,6 @@ from entities.shift import Shift
 class FailedLoginError(Exception):
     pass
 
-
 class InvalidPassword(Exception):
     pass
 
@@ -22,6 +21,7 @@ class UsernameTooShortError(Exception):
 
 class NoRoleError(Exception):
     pass
+
 
 class ShiftAppService:
     """Class that takes care of the application logic
@@ -109,7 +109,10 @@ class ShiftAppService:
         self.set_current_user(None)
 
     def choose_shift(self, shift_id):
-        self._shift_repository.choose_shift(shift_id, self._user)
+        if shift_id is None:
+            raise IncorrectSelection("No shift selected")
+        else:
+            self._shift_repository.choose_shift(shift_id, self._user)
 
     def _check_password_validity(self, password):
         """Checks if password meets safety requirements

@@ -1,6 +1,6 @@
-from tkinter import StringVar, Tk, ttk, constants
+from tkinter import StringVar, Tk, ttk, constants, messagebox
 from services.shift_app_service import ShiftAppService
-from repositories.shift_repository import ShiftRepository
+from repositories.shift_repository import ShiftRepository, NoShiftsError
 
 
 class CreateEmployeeUi:
@@ -45,8 +45,15 @@ class CreateEmployeeUi:
         self._handle_login()
 
     def handle_available_button_click(self):
-        rows = self._shift_repository.find_available_shifts()
-        self._handle_shift_view(rows, True)
+        try:
+            rows = self._shift_repository.find_available_shifts()
+            self._handle_shift_view(rows, True)
+
+        except NoShiftsError:
+            messagebox.showerror(title="No available shifts",
+            message= "There are no available shifts right now"
+            )
+
 
     def handle_my_shifts_button_click(self):
         shifts = self._shift_repository.find_user_shifts(self._shiftappservice.get_current_user)

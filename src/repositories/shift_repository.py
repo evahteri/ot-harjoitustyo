@@ -1,6 +1,9 @@
 from entities.shift import Shift
 from shift_db_connection import get_shift_db_connection
 
+class NoShiftsError(Exception):
+    pass
+
 
 def return_shift(row):
     return Shift(row["date"], row["time"], row["location"], row["employee"])
@@ -97,7 +100,9 @@ class ShiftRepository:
             "SELECT * FROM shift_database WHERE employee IS NULL")
         rows = cursor.fetchall()
         cursor.close()
-        return return_multiple_shifts(rows)
+        if rows:
+            return return_multiple_shifts(rows)
+        raise NoShiftsError("No available shifts")
     
     def choose_shift(self,shift_id, user):
         cursor = self._connection.cursor()
