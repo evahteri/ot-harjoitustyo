@@ -1,6 +1,7 @@
 from tkinter import StringVar, Tk, ttk, constants
 from services.shift_app_service import ShiftAppService
 from repositories.shift_repository import ShiftRepository
+from entities.shift import Shift
 
 class ShiftView:
     """Class that is responsible for viewing shifts
@@ -52,7 +53,7 @@ class ShiftView:
         self.back_button.grid(row=3, column=0)
     
     def _initialize_select_shift_button(self):
-        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shifts", command=self.handle_select_shift_button)
+        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shift", command=self.handle_select_shift_button)
         self.select_shift_button.grid(row=1, column=0)
         
 
@@ -63,4 +64,11 @@ class ShiftView:
             self._employer_view()
 
     def handle_select_shift_button(self):
-        print(self._table.selection())
+        row = self._table.item(self._table.selection())
+        date = row["values"][0]
+        time = row["values"][1]
+        location = row["values"][2]
+        employee = row["values"][3]
+        shift = Shift(date,time,location, employee)
+        self._shift_app_service.choose_shift(shift)
+

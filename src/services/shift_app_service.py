@@ -108,6 +108,9 @@ class ShiftAppService:
     def logout(self):
         self.set_current_user(None)
 
+    def choose_shift(self, shift):
+        self._shift_repository.choose_shift(shift, self._user)
+
     def _check_password_validity(self, password):
         """Checks if password meets safety requirements
 
@@ -132,3 +135,4 @@ class ShiftAppService:
         if not any(i in special_characters for i in password):
             valid = False
         return valid
+    

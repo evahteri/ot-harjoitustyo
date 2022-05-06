@@ -52,6 +52,7 @@ class ShiftRepository:
             "SELECT * FROM shift_database WHERE (date, time, location, employee)=(?,?,?,?)",
             (shift.date, shift.time, shift.location, shift.employee))
         row = cursor.fetchone()
+        cursor.close()
         return return_shift(row)
 
     def find_user_shifts(self, user):
@@ -68,6 +69,7 @@ class ShiftRepository:
         cursor.execute(
             "SELECT * FROM shift_database WHERE employee = ?", [user.username])
         rows = cursor.fetchall()
+        cursor.close()
         return return_multiple_shifts(rows)
 
     def find_all_shifts(self):
@@ -81,6 +83,7 @@ class ShiftRepository:
         cursor.execute(
             "SELECT * FROM shift_database")
         rows = cursor.fetchall()
+        cursor.close()
         return return_multiple_shifts(rows)
 
     def find_available_shifts(self):
@@ -93,4 +96,14 @@ class ShiftRepository:
         cursor.execute(
             "SELECT * FROM shift_database WHERE employee IS NULL")
         rows = cursor.fetchall()
+        cursor.close()
         return return_multiple_shifts(rows)
+    
+    def choose_shift(self,shift, user):
+        cursor = self._connection.cursor()
+        cursor.execute("UPDATE shift_database SET employee = ? \
+            WHERE (date, time, location, employee)=(?,?,?,?)", (user.username, shift.date, shift.time, shift.location, shift.employee))
+        self._connection.commit()
+        cursor.close()
+        print("success")
+
