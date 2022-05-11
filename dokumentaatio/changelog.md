@@ -53,5 +53,8 @@
 - Vuorojen taulukkoon lisätty "shift id" jonka mukaan tunnistaa uniikit vuorot
 - Choose shift toimii nyt
 - Ilmoituksia lisätty vuoron valintaan liittyen
+- Tallennuksen konfiguraatio uusittu ketterämmäksi
+- Testit käyttävät nyt testitietokantoja
+- Uusia testejä luotu
 
 

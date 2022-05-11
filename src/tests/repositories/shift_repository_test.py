@@ -35,3 +35,7 @@ class TestShiftRepository(unittest.TestCase):
         shifts = ShiftRepository().find_available_shifts()
         self.assertEqual(shifts[0][4], None)
 
+    def test_find_all_shifts(self):
+        shifts = [(1, "12.4.2021", "6:30-12:00", "Exactum", "Samuli"),(2, "12.5.2022", "7:00-12:00","Physicum", "Samuli"),(3, "11.2.2022", "7:00-14:00","Unicafe", None)]
+        all_shifts = ShiftRepository().find_all_shifts()
+        self.assertEqual(shifts, all_shifts)
