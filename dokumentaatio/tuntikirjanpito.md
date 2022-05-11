@@ -32,5 +32,5 @@
 | 6.5.          | 5             | Choose shift toiminnallisuuden tekemistä                   |
 | 11.5.         | 2             | Tallennuksen konfiguraatioiden tekemistä                   |
 | 11.5.         | 2             | Testien luomista                                           |
-| 11.5          |               | Dokumentaation täydentäminen                               |
-| yht.          | 78            |                                                            |
+| 11.5          | 3             | Dokumentaation täydentäminen                               |
+| yht.          | 81            |                                                            |

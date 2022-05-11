@@ -58,5 +58,6 @@
 - Uusia testejä luotu
 - Testit testaavat nyt ohjelmaa laajasti
 - Uusi virheviesti sille, jos käyttäjä valitsee liian monta vuoroa itselleen kerralla
+- Docstring dokumentaation viimeistely
 
 
