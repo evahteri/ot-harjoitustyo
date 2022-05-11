@@ -69,7 +69,7 @@ class LoginUi:
         password_header.grid(row=4, column=0)
 
         self.password_entry = ttk.Entry(
-            master=self._frame, textvariable=self._password_entry)
+            master=self._frame, textvariable=self._password_entry,show="*")
 
         self.password_entry.grid(row=5, column=0)
 
