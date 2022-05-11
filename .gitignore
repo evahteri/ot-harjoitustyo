@@ -5,3 +5,5 @@ htmlcov
 users.db
 shifts.db
 dummytest.py
+test-shifts.db
+test-users.db
