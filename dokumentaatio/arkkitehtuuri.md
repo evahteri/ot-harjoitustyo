@@ -78,6 +78,5 @@ UI Käyttää ShiftAppServiceä, joka taas käyttää ShiftRepositoryn funktiota
 
 ### Muu toiminnallisuus
 
-Loput ohjelman toiminnallisuudesta koostuu samalla tavalla. Muut luokat kutsuvat muiden luokkien metodeja tarpeen mukaan ja näin ohjelman vastuualueet ovat selkeät.
-
+Loput ohjelman toiminnallisuudesta koostuu samalla tavalla. Käyttöliittymä kutsuu tarvittavaa ShiftAppServicen metodia, joka kutsuu tarvittavaa Repositoryn metodia ja hakee/tekee tarvittavat muutokset. Kun näkymä muuttuu takaisin, kaikki tieto on tallennettu ja käyttäjä voi valita uuden toiminnon. Ohjelman sammuessa kaikki tallennettu tieto jää tietokantoihin.
 
