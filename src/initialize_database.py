@@ -14,6 +14,17 @@ class CreateDatabases:
 
         self._connection = get_db_connection()
         self.shift_connection = get_shift_db_connection()
+    
+    def drop_tables(self):
+        users_cursor = self._connection.cursor()
+
+        users_cursor.execute("DROP TABLE IF EXISTS user_database")
+
+        self._connection.commit()
+
+        shifts_cursor = self.shift_connection.cursor()
+
+        shifts_cursor.execute("DROP TABLE IF EXISTS shift_database")
 
     def create_user_database(self):
         """Creates a database and a table for user information
@@ -47,6 +58,7 @@ class CreateDatabases:
         """Runs both functions to establish databases
 
         """
+        self.drop_tables()
 
         self.create_user_database()
         self.create_shift_database()

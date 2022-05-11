@@ -111,3 +111,8 @@ class ShiftRepository:
             (user.username, shift_id))
         self._connection.commit()
         cursor.close()
+
+    def delete_data(self):
+        cursor = self._connection.cursor()
+        cursor.execute("DELETE FROM user_database")
+        self._connection.commit()

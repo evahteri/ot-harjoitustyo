@@ -26,7 +26,7 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
     - Päivämäärä 
     - Aika 
     - Paikka 
-    - "Choose shift" -nappula jolloin vuoro siirtyy omiin vuoroihin
+    - "Choose shift" -nappula jolloin vuoro siirtyy omiin vuoroihin _tehty_
   - Omissa vuoroissa näkyy valitut vuorot _tehty_
 - Käyttäjä voi kirjautua ulos _tehty_
 #### Työnantajan rooli
