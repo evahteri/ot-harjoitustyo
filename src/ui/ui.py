@@ -1,8 +1,6 @@
 from services.shift_app_service import ShiftAppService
 from ui.create_user import CreateUserUi
 from ui.login import LoginUi
-from tkinter import Tk
-
 from ui.employee_ui import CreateEmployeeUi
 from ui.employer_ui import CreateEmployerUi
 from ui.create_shift import CreateShift

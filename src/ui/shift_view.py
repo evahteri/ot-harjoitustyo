@@ -1,7 +1,5 @@
-from tkinter import StringVar, Tk, ttk, constants, messagebox
-from services.shift_app_service import ShiftAppService
+from tkinter import ttk, constants, messagebox
 from repositories.shift_repository import ShiftRepository
-from entities.shift import Shift
 
 
 class ShiftView:

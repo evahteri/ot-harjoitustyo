@@ -1,5 +1,4 @@
-from tkinter import StringVar, Tk, ttk, constants
-from services.shift_app_service import ShiftAppService
+from tkinter import ttk, constants
 from repositories.shift_repository import ShiftRepository
 
 

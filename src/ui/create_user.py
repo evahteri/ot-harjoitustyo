@@ -1,4 +1,4 @@
-from tkinter import StringVar, Tk, ttk, constants, messagebox
+from tkinter import StringVar, ttk, constants, messagebox
 from services.shift_app_service import InvalidPassword, UsernameExistsError, UsernameTooShortError, NoRoleError
 
 
