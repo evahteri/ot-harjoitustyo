@@ -12,10 +12,10 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
 ### Ennen kirjautumista
 - Käyttäjä voi luoda käyttäjätunnuksen
   - Salasanan täytyy olla yli 8 merkkiä ja sisältää:
-    - Vähintään yksi iso kirjain _tehty_
-    - Vähintään yksi pieni kirjain _tehty_
-    - Vähintään yksi numero _tehty_
-    - Vähintään yksi erikoismerkki (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.) _tehty_
+    - Vähintään yksi iso kirjain 
+    - Vähintään yksi pieni kirjain 
+    - Vähintään yksi numero 
+    - Vähintään yksi erikoismerkki (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.)
    - Tunnusta luodessa valitaan rooli työntekijän ja työnantajan välillä
 - Käyttäjä voi kirjautua sisään tunnuksella ja salasanalla
   - Jos käyttäjätunnus tai salasana on väärin, järjestelmä ilmoittaa siitä
@@ -26,7 +26,7 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
     - Päivämäärä 
     - Aika 
     - Paikka 
-    - "Choose shift" -nappula jolloin vuoro siirtyy omiin vuoroihin _tehty_
+    - "Choose shift" -nappula jolloin vuoro siirtyy omiin vuoroihin
   - Omissa vuoroissa näkyy valitut vuorot
 - Käyttäjä voi kirjautua ulos
 #### Työnantajan rooli
