@@ -1,4 +1,7 @@
-# Tämä on Ohjelmistotekniikan kurssin harjoitustyö
+# Work Shift App
+Tämä sovellus on työvuorosovellus, jolla työnantaja voi luoda työvuoroja ja tarkastella niitä. Työntekijä voi valita vapaista vuoroista itselleen vuoroja ja tarkastella omia vuorojaan. Sovellukseen on mahdollista luoda useampi käyttäjä.
+ 
+# Dokumentaatio
 
 [Käyttöohje](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
