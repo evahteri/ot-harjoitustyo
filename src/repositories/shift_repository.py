@@ -7,10 +7,26 @@ class NoShiftsError(Exception):
 
 
 def return_shift(row):
+    """Returns a shift in easier form
+
+    Args:
+        row (row): Row object from sqlite database
+
+    Returns:
+        list: List that includes the shift information
+    """
     return Shift(row["date"], row["time"], row["location"], row["employee"])
 
 
 def return_multiple_shifts(rows):
+    """Returns mulitiple shifts in easier form
+
+    Args:
+        rows (row): multiple rows from sqlite database
+
+    Returns:
+        list: list that has all the shifts' info in tuples
+    """
     data = []
     for row in rows:
         data.append((row["shift_id"], row["date"], row["time"],

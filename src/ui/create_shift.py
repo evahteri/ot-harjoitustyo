@@ -34,6 +34,25 @@ class CreateShift:
         """Closes the view
         """
         self._frame.destroy()
+    
+    def _handle_back_button(self):
+        self._handle_employer_ui()
+
+    def _handle_button_click(self):
+        date = self.date_entry.get()
+        time = self.time_entry.get()
+        location = self.location_entry.get()
+        employee = self.employee_entry.get()
+        if employee == "":
+            employee = None
+        try:
+            self._shiftappservice.create_shift(
+                date=date, time=time, location=location, employee=employee)
+            messagebox.showinfo(title="Shift created",
+                                message="Shift created succesfully!")
+        except InvalidShiftInformation:
+            messagebox.showinfo(
+                title="Invalid info", message="Please provide all required information")
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
@@ -77,22 +96,3 @@ class CreateShift:
             master=self._frame, text="Back", command=self._handle_back_button
         )
         back_button.grid(row=12, column=0)
-
-    def _handle_back_button(self):
-        self._handle_employer_ui()
-
-    def _handle_button_click(self):
-        date = self.date_entry.get()
-        time = self.time_entry.get()
-        location = self.location_entry.get()
-        employee = self.employee_entry.get()
-        if employee == "":
-            employee = None
-        try:
-            self._shiftappservice.create_shift(
-                date=date, time=time, location=location, employee=employee)
-            messagebox.showinfo(title="Shift created",
-                                message="Shift created succesfully!")
-        except InvalidShiftInformation:
-            messagebox.showinfo(
-                title="Invalid info", message="Please provide all required information")

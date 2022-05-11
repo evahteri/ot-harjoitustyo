@@ -29,34 +29,14 @@ class ShiftView:
         self._base()
 
     def pack(self):
+        """Shows the view
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Closes the view
+        """
         self._frame.destroy()
-
-    def _base(self):
-        self._frame = ttk.Frame(master=self._root)
-        self._table = ttk.Treeview(
-            master=self._frame, columns=(0, 1, 2, 3, 4), show="headings")
-
-        self._table.heading(0, text="id")
-        self._table.heading(1, text="Date")
-        self._table.heading(2, text="Time")
-        self._table.heading(3, text="Location")
-        self._table.heading(4, text="Employee")
-
-        for row in self.rows:
-            self._table.insert(parent="", index="end", values=(
-                row[0], row[1], row[2], row[3]))
-
-        self._table.grid(row=0, column=0)
-
-        if self._choose_button is True:
-            self._initialize_select_shift_button()
-
-        self.back_button = ttk.Button(
-            master=self._frame, text="Back", command=self._handle_back_button)
-        self.back_button.grid(row=3, column=0)
 
     def _initialize_select_shift_button(self):
         self.select_shift_button = ttk.Button(
@@ -81,3 +61,27 @@ class ShiftView:
             messagebox.showerror(title="No shift chosen",
                                  message="You did not select any shift"
                                  )
+
+    def _base(self):
+        self._frame = ttk.Frame(master=self._root)
+        self._table = ttk.Treeview(
+            master=self._frame, columns=(0, 1, 2, 3, 4), show="headings")
+
+        self._table.heading(0, text="id")
+        self._table.heading(1, text="Date")
+        self._table.heading(2, text="Time")
+        self._table.heading(3, text="Location")
+        self._table.heading(4, text="Employee")
+
+        for row in self.rows:
+            self._table.insert(parent="", index="end", values=(
+                row[0], row[1], row[2], row[3]))
+
+        self._table.grid(row=0, column=0)
+
+        if self._choose_button is True:
+            self._initialize_select_shift_button()
+
+        self.back_button = ttk.Button(
+            master=self._frame, text="Back", command=self._handle_back_button)
+        self.back_button.grid(row=3, column=0)

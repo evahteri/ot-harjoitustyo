@@ -3,10 +3,18 @@ from services.shift_app_service import InvalidPassword, UsernameExistsError, Use
 
 
 class CreateUserUi:
-    """Constructor for user creatioon view
+    """Class for user creatioon view
     """
 
     def __init__(self, root, handle_create_user, handle_login, service):
+        """Constructor for user creation view
+
+        Args:
+            root (Tk()): TK() window from the ui
+            handle_create_user (function): Function that handles the create user view
+            handle_login (function): Function that handles the login view
+            service (class): The service the whole ui uses
+        """
         self._root = root
         self._handle_create_user = handle_create_user
         self._handle_login = handle_login
@@ -27,7 +35,7 @@ class CreateUserUi:
         """Closes the view
         """
         self._frame.destroy()
-
+    
     def _handle_back_button(self):
         self._handle_login()
 
@@ -59,6 +67,7 @@ class CreateUserUi:
             messagebox.showerror(title="Username exists",
                                  message=f"User {username} already exists!"
                                  )
+
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
@@ -97,3 +106,4 @@ class CreateUserUi:
             master=self._frame, text="Back", command=self._handle_back_button
         )
         back_button.grid(row=12, column=0)
+
