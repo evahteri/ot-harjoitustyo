@@ -78,7 +78,7 @@ class ShiftView:
 
         for row in self.rows:
             self._table.insert(parent="", index="end", values=(
-                row[0], row[1], row[2], row[3]))
+                row[0], row[1], row[2], row[3], row[4]))
 
         self._table.grid(row=0, column=0)
 
