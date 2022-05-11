@@ -126,7 +126,7 @@ class ShiftAppService:
         valid = True
         if len(password) < 8:
             valid = False
-        if not any(i.isupper for i in password):
+        if not any(i.isupper() for i in password):
             valid = False
         if not any(i.isdigit() for i in password):
             valid = False
