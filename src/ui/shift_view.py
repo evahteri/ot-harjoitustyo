@@ -1,4 +1,4 @@
-from tkinter import ttk, constants, messagebox
+from tkinter import ttk, constants, messagebox, TclError
 from repositories.shift_repository import ShiftRepository
 
 
@@ -59,6 +59,11 @@ class ShiftView:
             messagebox.showerror(title="No shift chosen",
                                  message="You did not select any shift"
                                  )
+        except TclError:
+            messagebox.showerror(title="Multiple shifts chosen",
+                                 message="Please choose one shift at a time"
+                                 )
+
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
