@@ -52,12 +52,7 @@ class ShiftAppService:
         current_user = self._user
         return current_user
 
-    def set_current_user(self, user):
-        """Sets the current user to the user from the arg
-
-        Args:
-            user (User): User object that will be assigned to self._user
-        """
+    def __set_current_user(self, user):
         self._user = user
 
     def _check_password_validity(self, password):
@@ -133,13 +128,13 @@ class ShiftAppService:
         user = UserRepository().login(username, password)
         if not user:
             raise FailedLoginError("Invalid username or password")
-        self.set_current_user(user)
+        self.__set_current_user(user)
         return self._user
 
     def logout(self):
         """Logs user out, a.k.a. sets current user to None
         """
-        self.set_current_user(None)
+        self.__set_current_user(None)
 
     def choose_shift(self, shift_id):
         """Chooses the shift via shift repository
