@@ -1,5 +1,10 @@
 # Käyttöohje
 
+## Konfigurointi
+
+Ohjelma käyttää tallennukseen kahta eri tiedostoa. Näiden nimiä voit muokana ohjelman .env -tiedostossa:
+![env]()
+
 ## Ohjelman käynnistäminen
 
 ### Alkutoimet
@@ -42,7 +47,7 @@ Valitse itsellesi relevantti rooli valintanappulasta
 
 Luo käyttäjä painamalla Create
 
-![create user](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-03%2014-57-00.png)
+![create user](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2018-16-17.png)
 
 Jos käyttäjän luominen onnistuu, sovellus ilmoittaa siitä ilmoituksella:
 
