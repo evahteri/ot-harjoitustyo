@@ -24,7 +24,7 @@ poetry run invoke start
 ```
 Sovellus aukaisee login näkymän
 
-![login]
+![login](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-03%2014-55-04.png)
 
 ## Uuden käyttäjän luominen
 
@@ -55,7 +55,7 @@ Jos salasana ei vastaa vaatimuksia, sovellus ilmoittaa siitä ilmoituksella:
 ## Sisäänkirjautuminen
 Syötä käyttäjätiedot tekstikenttiin ja klikkaa login
 
-![login view](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-03%2014-57-50.png)
+![login view](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-44-05.png)
 
 Jos käyttäjää ei löydy tietokannasta, sovellus ilmoittaa siitä:
 
@@ -67,25 +67,56 @@ Käyttäjätunnuksen ja salasanan ollessa oikein siirrytään roolin mukaiseen n
 
 Työnantajana voit valita haluatko nähdä kaikki vuorot vai luoda uuden. Tietokanta ei sisällä valmiiksi yhtään vuoroa.
 
-![Employer_view]()
+![Employer_view](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-28-22.png)
+
+### Luo uusi vuoro
+
+Klikkaamalla "Create a new shift" voit luoda uuden vuoron
+
+![new shift](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-28-28.png)
+
+Syötä haluamasi tiedot, voit jättää "Employee" kentän tyhjäksi jos et halua määrittää sitä tietylle työntekijälle, vaan se on vapaana kenelle tahansa.
+Luo vuoro klikkaamalla "Create"
+
+![creation](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-29-01.png)
+
+Jos tiedot ovat oikein, tulee ilmoitus:
+
+![successfull](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-29-05.png)
+
+Jos jokin vaadituista tiedoista puuttuu, tulee ilmoitus:
+
+![unsuccessful](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-29-14.png)
+
+### Kaikkien vuorojen tarkastelu
+
+Voit nähdä kaikki luomasi vuorot taulukossa klikkaamalla "Show all shifts":
+
+![all shifts](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-43-12.png)
+
+Voit kirjautua ulos ja palata kirjautumisnäkymään "Log out" painikkeesta.
  
 ## Työntekijän rooli
 
-Klikkaamalla Show available shifts voit nähdä vapaat vuorot
+Klikkaamalla Show available shifts voit nähdä vapaat vuorot:
 
-Klikkaamalla Show my shifts voit nähdä omat vuorosi
+![available](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-43-12.png)
+
+Voit valita vapaan vuoron itsellesi klikkaamalla sitä ja painamalla "Choose selected shift":
+
+![choice](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-42-06.png)
+
+Sovellus ilmoittaa onnistuneesta toiminnosta:
+
+![success](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-42-09.png)
+
+Nyt klikkaamalla Show my shifts voit nähdä omat vuorosi:
+
+![my shifts](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-42-19.png)
 
 Log out napista pääset kirjautumaan sovelluksesta ulos
 
 ![employee view](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-03%2014-57-55.png)
-
-
-### Vuorojen näkymä
-
-Available shifts näkymässä, valitse haluamasi vuorot ja paina Choose selected shifts
-
-![shifts](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-03%2014-58-03.png)
-
 
 ## Lopetus
 
