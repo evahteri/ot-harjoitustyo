@@ -49,13 +49,35 @@ Edelliseen näkymään voi aina palata back -painikkeella.
 
 ## Toiminnalliisuus
 
+### Päätoiminnallisuudet
 
-## Käyttäjän kirjautuminen
+
+#### Käyttäjän kirjautuminen
 
 Käyttäjä näkee näkymässä kentät käyttäjätunnukselle ja salasanalle. Nämä syötettyään käyttäjän painaessa login nappia, seuraavat asiat tapahtuvat:
 
 ![Sekvenssikaavio](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio.png)
 
 UI käyttää ShiftAppServicen login-funktiota, joka taas käyttää user repositoryn login -funktiota, joka hakee tietokannasta käyttäjän. Tässä vaiheessa nostetaan error jos käyttäjää ei löydy tai salasana ei täsmää. User repository palauttaa user -olion ShiftAppServicelle, joka edelleen palauttaa sen UI:lle ja UI:n näkymä siirtyy roolin mukaiseen näkymään.
+
+### Käyttäjän luominen
+
+Käyttäjä syöttää käyttöliittymän kenttiin käyttäjätunnuksen ja salasanan, sekä valitsee itselleen sopivan roolin. Tämän jälkeen käyttäjän painaessa "Create user" tapahtuu seuraavat asiat:
+
+![create user](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2020-03-27.png)
+
+UI Käyttää ShiftAppServiceä, joka taas käyttää UserRepositoryn funktiota käyttäjän luomiseen. Jos jokin virhe ei esiinny, funktiot palauttavat user -olion takaisin ja käyttäjälle ilmoitetaan onnistuneesta käyttäjän luomisesta.
+
+### Vuoron luominen
+
+Käyttäjä kirjoittaa käyttöliittymän kenttiin tarvittavat tiedot ja painaa "Create shift". Sitten ohjelma toimii seuraavalla tavalla:
+
+![create shift](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2020-06-18.png)
+
+UI Käyttää ShiftAppServiceä, joka taas käyttää ShiftRepositoryn funktiota vuoron luomiseen. Jos jokin virhe ei esiinny, funktiot palauttavat shift -olion takaisin ja käyttäjälle ilmoitetaan onnistuneesta vuoron luomisesta.
+
+### Muu toiminnallisuus
+
+Loput ohjelman toiminnallisuudesta koostuu samalla tavalla. Muut luokat kutsuvat muiden luokkien metodeja tarpeen mukaan ja näin ohjelman vastuualueet ovat selkeät.
 
 
