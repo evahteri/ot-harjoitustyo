@@ -15,6 +15,8 @@ Tämä sovellus on tehty Helsingin Yliopiston Ohjelmistotekniikkakurssilla harjo
 
 [Arkkitehtuurikuvaus](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Testausdokumentti](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/testausdokumentti.md)
+
 [Viikon 5 Release](https://github.com/evahteri/ot-harjoitustyo/releases/tag/viikko5)
 
 [Viikon 6 Release](https://github.com/evahteri/ot-harjoitustyo/releases/tag/viikko6)
