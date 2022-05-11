@@ -1,4 +1,5 @@
 import unittest
+from repositories.user_repository import UserRepository
 from services.shift_app_service import ShiftAppService
 from repositories.shift_repository import ShiftRepository
 from entities.shift import Shift
@@ -7,6 +8,8 @@ from entities.user import User
 
 class TestShiftRepository(unittest.TestCase):
     def setUp(self):
+        ShiftRepository().delete_data()
+        UserRepository().delete_data()
         self.shift = Shift(date="12.4.2021",
                            time="6:30-12:00",
                            location="Exactum",
@@ -26,9 +29,9 @@ class TestShiftRepository(unittest.TestCase):
 
     def test_find_user_shifts(self):
         shifts = ShiftRepository().find_user_shifts(self.user)
-        self.assertEqual(shifts[0][0], self.shift.date)
+        self.assertEqual(shifts[0][1], self.shift.date)
     
     def test_find_available_shifts(self):
         shifts = ShiftRepository().find_available_shifts()
-        self.assertEqual(shifts[0][3], None)
+        self.assertEqual(shifts[0][4], None)
 

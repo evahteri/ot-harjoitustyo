@@ -7,6 +7,7 @@ from initialize_database import CreateDatabases
 
 class TestUserRepository(unittest.TestCase):
     def setUp(self):
+        UserRepository().delete_data()
         self.user = User(username="Samuli",
                          password="Gorilla12!",
                          role="employee")

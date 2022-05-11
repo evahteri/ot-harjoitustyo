@@ -1,10 +1,12 @@
 import unittest
+from repositories.user_repository import UserRepository
 from services.shift_app_service import ShiftAppService
 from entities.user import User
 
 
 class TestShiftAppService(unittest.TestCase):
     def setUp(self):
+        UserRepository().delete_data()
         self.user = User(username="Samuli",
                          password="Gorilla12!",
                          role="employee")

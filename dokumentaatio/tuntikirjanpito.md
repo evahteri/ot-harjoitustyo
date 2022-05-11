@@ -30,5 +30,6 @@
 | 4.5.          | 1             | Kahden samannimisen käyttäjän tekeminen estetty            |
 | 5.5.          | 1             | Shift UI parannuksia                                       |
 | 6.5.          | 5             | Choose shift toiminnallisuuden tekemistä                   |
-| 11.5.         | 1             | Tallennuksen konfiguraatioiden tekemistä                   |
-| yht.          | 76            |                                                            |
+| 11.5.         | 2             | Tallennuksen konfiguraatioiden tekemistä                   |
+| 11.5.         | 1             | Testien luomista                                           |
+| yht.          | 77            |                                                            |
