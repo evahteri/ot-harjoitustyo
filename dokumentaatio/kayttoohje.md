@@ -24,7 +24,7 @@ poetry run invoke start
 ```
 Sovellus aukaisee login näkymän
 
-![login](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-03%2014-55-04.png)
+![login]
 
 ## Uuden käyttäjän luominen
 
@@ -63,6 +63,11 @@ Jos käyttäjää ei löydy tietokannasta, sovellus ilmoittaa siitä:
 
 Käyttäjätunnuksen ja salasanan ollessa oikein siirrytään roolin mukaiseen näkymään
 
+## Työnantajan rooli
+
+Työnantajana voit valita haluatko nähdä kaikki vuorot vai luoda uuden. Tietokanta ei sisällä valmiiksi yhtään vuoroa.
+
+![Employer_view]()
  
 ## Työntekijän rooli
 
@@ -81,9 +86,6 @@ Available shifts näkymässä, valitse haluamasi vuorot ja paina Choose selected
 
 ![shifts](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-03%2014-58-03.png)
 
-### Työnantajan rooli
-
-__TODO__
 
 ## Lopetus
 
