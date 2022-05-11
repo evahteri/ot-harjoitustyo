@@ -3,8 +3,17 @@ from services.shift_app_service import InvalidShiftInformation
 
 
 class CreateShift:
+    """Reponsible for shift creation ui view
+    """
 
     def __init__(self, root, handle_employer_ui, shiftappservice):
+        """Constructor that creates the view
+
+        Args:
+            root (TK()): Tk() element from ui.py
+            handle_employer_ui (function): Function that handles the employer view
+            shiftappservice (class): The established class that the whole ui uses
+        """
         self._root = root
         self._handle_employer_ui = handle_employer_ui
         self._frame = None
@@ -17,9 +26,13 @@ class CreateShift:
         self._base()
 
     def pack(self):
+        """Shows the view
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Closes the view
+        """
         self._frame.destroy()
 
     def _base(self):
@@ -55,7 +68,6 @@ class CreateShift:
         self.employee_entry = ttk.Entry(
             master=self._frame, textvariable=self._employee)
         self.employee_entry.grid(row=9, column=0)
-
 
         create_button = ttk.Button(
             master=self._frame, text="Create", command=self._handle_button_click)

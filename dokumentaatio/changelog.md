@@ -56,5 +56,6 @@
 - Tallennuksen konfiguraatio uusittu ketterämmäksi
 - Testit käyttävät nyt testitietokantoja
 - Uusia testejä luotu
+- Testit testaavat nyt ohjelmaa laajasti
 
 

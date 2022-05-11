@@ -31,5 +31,6 @@
 | 5.5.          | 1             | Shift UI parannuksia                                       |
 | 6.5.          | 5             | Choose shift toiminnallisuuden tekemistä                   |
 | 11.5.         | 2             | Tallennuksen konfiguraatioiden tekemistä                   |
-| 11.5.         | 1             | Testien luomista                                           |
-| yht.          | 77            |                                                            |
+| 11.5.         | 2             | Testien luomista                                           |
+| 11.5          |               | Dokumentaation täydentäminen                               |
+| yht.          | 78            |                                                            |

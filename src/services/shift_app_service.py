@@ -7,17 +7,22 @@ from entities.shift import Shift
 class FailedLoginError(Exception):
     pass
 
+
 class InvalidPassword(Exception):
     pass
+
 
 class InvalidShiftInformation(Exception):
     pass
 
+
 class UsernameExistsError(Exception):
     pass
 
+
 class UsernameTooShortError(Exception):
     pass
+
 
 class NoRoleError(Exception):
     pass
@@ -39,8 +44,38 @@ class ShiftAppService:
 
     @property
     def get_current_user(self):
+        """Calling this will return the user that is logged in
+
+        Returns:
+            User: current user
+        """
         current_user = self._user
         return current_user
+
+    def set_current_user(self, user):
+        """Sets the current user to the user from the arg
+
+        Args:
+            user (User): User object that will be assigned to self._user
+        """
+        self._user = user
+
+    def _check_password_validity(self, password):
+        special_characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
+                              ":", ";", "<", "=", ">", "?", "@", "[", "]",
+                              "^", "_", "`", "{", "|", "}", "~", "."]
+        valid = True
+        if len(password) < 8:
+            valid = False
+        if not any(i.isupper() for i in password):
+            valid = False
+        if not any(i.isdigit() for i in password):
+            valid = False
+        if not any(i.islower() for i in password):
+            valid = False
+        if not any(i in special_characters for i in password):
+            valid = False
+        return valid
 
     def create_user(self, username, password, role):
         """Creates a user
@@ -77,7 +112,7 @@ class ShiftAppService:
         """
         if len(date) == 0 or len(time) == 0 or len(location) == 0:
             raise InvalidShiftInformation("Invalid shift information")
-        
+
         new_shift = Shift(date, time, location, employee)
         self._shift_repository.create_shift(new_shift)
 
@@ -101,38 +136,15 @@ class ShiftAppService:
         self.set_current_user(user)
         return self._user
 
-
-    def set_current_user(self, user):
-        self._user = user
-
     def logout(self):
+        """Logs user out, a.k.a. sets current user to None
+        """
         self.set_current_user(None)
 
     def choose_shift(self, shift_id):
-        self._shift_repository.choose_shift(shift_id, self._user)
-
-    def _check_password_validity(self, password):
-        """Checks if password meets safety requirements
+        """Chooses the shift via shift repository
 
         Args:
-            password (string): user input for password
-
-        Returns:
-            Boolean: True if valid, False if not valid
+            shift_id (int): id number that matches the selected shift
         """
-        special_characters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/",
-                              ":", ";", "<", "=", ">", "?", "@", "[", "]",
-                              "^", "_", "`", "{", "|", "}", "~", "."]
-        valid = True
-        if len(password) < 8:
-            valid = False
-        if not any(i.isupper() for i in password):
-            valid = False
-        if not any(i.isdigit() for i in password):
-            valid = False
-        if not any(i.islower() for i in password):
-            valid = False
-        if not any(i in special_characters for i in password):
-            valid = False
-        return valid
-    
+        self._shift_repository.choose_shift(shift_id, self._user)

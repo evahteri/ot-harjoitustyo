@@ -3,6 +3,8 @@ from services.shift_app_service import InvalidPassword, UsernameExistsError, Use
 
 
 class CreateUserUi:
+    """Constructor for user creatioon view
+    """
 
     def __init__(self, root, handle_create_user, handle_login, service):
         self._root = root
@@ -17,10 +19,46 @@ class CreateUserUi:
         self._base()
 
     def pack(self):
+        """Shows the view
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Closes the view
+        """
         self._frame.destroy()
+
+    def _handle_back_button(self):
+        self._handle_login()
+
+    def _handle_button_click(self):
+        username = self.username_entry.get()
+        password = self.password_entry.get()
+        role = self._role.get()
+        try:
+            self._service.create_user(
+                username=username, password=password, role=role)
+            messagebox.showinfo(title="User created",
+                                message="User created succesfully!")
+
+        except UsernameTooShortError:
+            messagebox.showerror(title="Username too short",
+                                 message="Username is too short, please provide a username longer than 2 characters"
+                                 )
+
+        except NoRoleError:
+            messagebox.showerror(title="No role chosen",
+                                 message="Please choose a role")
+
+        except InvalidPassword:
+            messagebox.showinfo(
+                title="Invalid Password", message="Password should be over 8 characters, include at least one upper- and lowercase letter, a special character and a number"
+            )
+
+        except UsernameExistsError:
+            messagebox.showerror(title="Username exists",
+                                 message=f"User {username} already exists!"
+                                 )
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
@@ -59,35 +97,3 @@ class CreateUserUi:
             master=self._frame, text="Back", command=self._handle_back_button
         )
         back_button.grid(row=12, column=0)
-
-    def _handle_back_button(self):
-        self._handle_login()
-
-    def _handle_button_click(self):
-        username = self.username_entry.get()
-        password = self.password_entry.get()
-        role = self._role.get()
-        try:
-            self._service.create_user(
-                username=username, password=password, role=role)
-            messagebox.showinfo(title="User created",
-                                message="User created succesfully!")
-
-        except UsernameTooShortError:
-            messagebox.showerror(title="Username too short",
-            message= "Username is too short, please provide a username longer than 2 characters"
-            )
-        
-        except NoRoleError:
-            messagebox.showerror(title="No role chosen", message= "Please choose a role")
-
-        except InvalidPassword:
-            messagebox.showinfo(
-                title="Invalid Password", message="Password should be over 8 characters, include at least one upper- and lowercase letter, a special character and a number"
-                )
-        
-        except UsernameExistsError:
-            messagebox.showerror(title="Username exists",
-                message= f"User {username} already exists!"
-            )
-

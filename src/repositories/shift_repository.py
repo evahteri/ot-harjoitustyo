@@ -1,6 +1,7 @@
 from entities.shift import Shift
 from shift_db_connection import get_shift_db_connection
 
+
 class NoShiftsError(Exception):
     pass
 
@@ -8,10 +9,12 @@ class NoShiftsError(Exception):
 def return_shift(row):
     return Shift(row["date"], row["time"], row["location"], row["employee"])
 
+
 def return_multiple_shifts(rows):
     data = []
     for row in rows:
-        data.append((row["shift_id"], row["date"], row["time"],row["location"], row["employee"]))
+        data.append((row["shift_id"], row["date"], row["time"],
+                    row["location"], row["employee"]))
     return data
 
 
@@ -48,7 +51,7 @@ class ShiftRepository:
             shift (Shift): a shift object that is searched
 
         Returns:
-            row: desired row object that includes the shift
+            row (list): a list that includes a tuple with shift information
         """
         cursor = self._connection.cursor()
         cursor.execute(
@@ -103,16 +106,24 @@ class ShiftRepository:
         if rows:
             return return_multiple_shifts(rows)
         raise NoShiftsError("No available shifts")
-    
-    def choose_shift(self,shift_id, user):
+
+    def choose_shift(self, shift_id, user):
+        """Sets shifts column "employee" to user
+
+        Args:
+            shift_id (int): integer that matches a shift in  the table
+            user (User): User object that is the current user
+        """
         cursor = self._connection.cursor()
         cursor.execute("UPDATE shift_database SET employee = ? \
-            WHERE shift_id = ?", 
-            (user.username, shift_id))
+            WHERE shift_id = ?",
+                       (user.username, shift_id))
         self._connection.commit()
         cursor.close()
 
     def delete_data(self):
+        """Deletes all data from the database
+        """
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM shift_database")
         self._connection.commit()

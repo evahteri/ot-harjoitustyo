@@ -14,7 +14,7 @@ class CreateDatabases:
 
         self._connection = get_db_connection()
         self.shift_connection = get_shift_db_connection()
-    
+
     def drop_tables(self):
         users_cursor = self._connection.cursor()
 

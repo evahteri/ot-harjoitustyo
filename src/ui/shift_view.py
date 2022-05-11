@@ -3,9 +3,11 @@ from services.shift_app_service import ShiftAppService
 from repositories.shift_repository import ShiftRepository
 from entities.shift import Shift
 
+
 class ShiftView:
     """Class that is responsible for viewing shifts
     """
+
     def __init__(self, root, handle_employee_view, handle_employer_view, shift_app_service, rows, choose_button):
         """Constructor that establishes which rows to show and services
 
@@ -34,7 +36,8 @@ class ShiftView:
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
-        self._table = ttk.Treeview(master=self._frame, columns=(0,1,2,3,4), show="headings")
+        self._table = ttk.Treeview(
+            master=self._frame, columns=(0, 1, 2, 3, 4), show="headings")
 
         self._table.heading(0, text="id")
         self._table.heading(1, text="Date")
@@ -43,20 +46,22 @@ class ShiftView:
         self._table.heading(4, text="Employee")
 
         for row in self.rows:
-            self._table.insert(parent="", index= "end", values=(row[0], row[1], row[2], row[3]))
+            self._table.insert(parent="", index="end", values=(
+                row[0], row[1], row[2], row[3]))
 
         self._table.grid(row=0, column=0)
 
         if self._choose_button is True:
             self._initialize_select_shift_button()
 
-        self.back_button = ttk.Button(master=self._frame, text="Back", command=self._handle_back_button)
+        self.back_button = ttk.Button(
+            master=self._frame, text="Back", command=self._handle_back_button)
         self.back_button.grid(row=3, column=0)
-    
+
     def _initialize_select_shift_button(self):
-        self.select_shift_button = ttk.Button(master=self._frame, text="Choose selected shift", command=self._handle_select_shift_button)
+        self.select_shift_button = ttk.Button(
+            master=self._frame, text="Choose selected shift", command=self._handle_select_shift_button)
         self.select_shift_button.grid(row=1, column=0)
-        
 
     def _handle_back_button(self):
         if self._shift_app_service.get_current_user.role == "Employee":
@@ -74,7 +79,5 @@ class ShiftView:
             self._employee_view()
         except IndexError:
             messagebox.showerror(title="No shift chosen",
-            message= "You did not select any shift"
-            )
-
-
+                                 message="You did not select any shift"
+                                 )

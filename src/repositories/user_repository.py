@@ -70,6 +70,9 @@ class UserRepository:
         return return_user(row)
 
     def delete_data(self):
+        """Deletes all data from the database
+        """
+
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM user_database")
         self._connection.commit()
