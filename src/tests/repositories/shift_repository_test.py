@@ -1,7 +1,8 @@
 import unittest
+import pytest
 from repositories.user_repository import UserRepository
 from services.shift_app_service import ShiftAppService
-from repositories.shift_repository import ShiftRepository
+from repositories.shift_repository import NoShiftsError, ShiftRepository
 from entities.shift import Shift
 from entities.user import User
 
@@ -39,3 +40,15 @@ class TestShiftRepository(unittest.TestCase):
         shifts = [(1, "12.4.2021", "6:30-12:00", "Exactum", "Samuli"),(2, "12.5.2022", "7:00-12:00","Physicum", "Samuli"),(3, "11.2.2022", "7:00-14:00","Unicafe", None)]
         all_shifts = ShiftRepository().find_all_shifts()
         self.assertEqual(shifts, all_shifts)
+    
+    def test_choose_shift(self):
+        ShiftRepository().choose_shift(3,self.user)
+        user_shifts = ShiftRepository().find_user_shifts(self.user)
+        shifts = [(1, "12.4.2021", "6:30-12:00", "Exactum", "Samuli"),(2, "12.5.2022", "7:00-12:00","Physicum", "Samuli"),(3, "11.2.2022", "7:00-14:00","Unicafe", "Samuli")]
+        self.assertEqual(user_shifts,shifts)
+
+    
+    def test_find_available_shifts_has_no_shifts(self):
+        ShiftRepository().delete_data()
+        with pytest.raises(NoShiftsError):
+            ShiftRepository().find_available_shifts()
