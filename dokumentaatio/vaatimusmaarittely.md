@@ -10,43 +10,42 @@ Sovelluksella on kaksi käyttäjäroolia: Työntekijä ja työnantaja. Työnteki
 
 ## Perusversion tarjoama toiminnallisuus
 ### Ennen kirjautumista
-- Käyttäjä voi luoda käyttäjätunnuksen _tehty_
-  - Salasanan täytyy olla yli 8 merkkiä ja sisältää: _tehty_
+- Käyttäjä voi luoda käyttäjätunnuksen
+  - Salasanan täytyy olla yli 8 merkkiä ja sisältää:
     - Vähintään yksi iso kirjain _tehty_
     - Vähintään yksi pieni kirjain _tehty_
     - Vähintään yksi numero _tehty_
     - Vähintään yksi erikoismerkki (!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~.) _tehty_
-   - Tunnusta luodessa valitaan rooli työntekijän ja työnantajan välillä _tehty_
-- Käyttäjä voi kirjautua sisään tunnuksella ja salasanalla _tehty_
-  - Jos käyttäjätunnus tai salasana on väärin, järjestelmä ilmoittaa siitä _tehty_
+   - Tunnusta luodessa valitaan rooli työntekijän ja työnantajan välillä
+- Käyttäjä voi kirjautua sisään tunnuksella ja salasanalla
+  - Jos käyttäjätunnus tai salasana on väärin, järjestelmä ilmoittaa siitä
 ### Kirjautumisen jälkeen
 #### Työntekijän rooli
-- Käyttäjä voi valita haluaako nähdä omat vuorot vai vapaat vuorot _tehty_
-  - Vapaissa vuoroissa näkyy vapaat vuorot ja siitä tiedot: _tehty_
+- Käyttäjä voi valita haluaako nähdä omat vuorot vai vapaat vuorot
+  - Vapaissa vuoroissa näkyy vapaat vuorot ja siitä tiedot:
     - Päivämäärä 
     - Aika 
     - Paikka 
     - "Choose shift" -nappula jolloin vuoro siirtyy omiin vuoroihin _tehty_
-  - Omissa vuoroissa näkyy valitut vuorot _tehty_
-- Käyttäjä voi kirjautua ulos _tehty_
+  - Omissa vuoroissa näkyy valitut vuorot
+- Käyttäjä voi kirjautua ulos
 #### Työnantajan rooli
-- Käyttäjä voi luoda uuden vuoron _tehty_
-  - Uusi vuoro -lomake kysyy tiedot _tehty_
+- Käyttäjä voi luoda uuden vuoron
+  - Uusi vuoro -lomake kysyy tiedot
     - Päivämäärä
     - Aika
     - Paikka
-   - "Create Shift" -nappulalla uusi vuoro luodaan _tehty_
-- Käyttäjä voi nähdä kaikki vuorot _tehty_
-  - Käyttäjä voi poistaa vuoron
-- Käyttäjä voi kirjautua ulos _tehty_
+    - Työntekijä
+   - "Create Shift" -nappulalla uusi vuoro luodaan
+- Käyttäjä voi nähdä kaikki vuorot
+- Käyttäjä voi kirjautua ulos
 
 ## Jatkokehitysideoita
 - Työnantaja pystyy muokata olemassaolevia vuoroja
+- Työntantaja voi poistaa vuoron
 - Lisätietojen lisääminen työvuoroon
 - Omien työvuorojen organisointi tehtyihin ja tuleviin
 - Työvuorojen lajittelu ja järjestys eri kriteereillä
 - Käyttäjän ja tietojen poistaminen
-- Työnantaja voi suoraan määrätä työntekijälle vuoroja _tehty_
-
 
   
