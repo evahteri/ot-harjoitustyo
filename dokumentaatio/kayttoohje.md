@@ -3,8 +3,10 @@
 ## Konfigurointi
 
 Ohjelma käyttää tallennukseen kahta eri tiedostoa. Näiden nimiä voit muokana ohjelman .env -tiedostossa:
-![env]()
-
+```
+SHIFTS_FILENAME=shifts.db
+USERS_FILENAME=users.db
+```
 ## Ohjelman käynnistäminen
 
 ### Alkutoimet
@@ -95,7 +97,7 @@ Jos jokin vaadituista tiedoista puuttuu, tulee ilmoitus:
 
 ### Kaikkien vuorojen tarkastelu
 
-Voit nähdä kaikki luomasi vuorot taulukossa klikkaamalla "Show all shifts":
+Voit nähdä kaikki vuorot taulukossa klikkaamalla "Show all shifts":
 
 ![all shifts](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2017-43-12.png)
 
