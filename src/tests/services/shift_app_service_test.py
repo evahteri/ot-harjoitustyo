@@ -1,5 +1,7 @@
 import unittest
 import pytest
+from entities.shift import Shift
+from repositories.shift_repository import ShiftRepository
 from repositories.user_repository import UserRepository
 from services.shift_app_service import FailedLoginError, InvalidPassword, InvalidShiftInformation, NoRoleError, ShiftAppService, UsernameExistsError, UsernameTooShortError
 from entities.user import User
@@ -22,6 +24,12 @@ class TestShiftAppService(unittest.TestCase):
     def test_login_with_invalid_credentials(self):
         with pytest.raises(FailedLoginError):
             self.shift_app_service.login("Emma", "Password1!")
+    
+    def test_choose_shift(self):
+        repository = ShiftRepository()
+        repository.create_shift(Shift(date="12.1.2022", time="12:00-20:00", location="Unicafe",employee=None))
+        self.shift_app_service.login(self.user.username, self.user.password)
+        self.shift_app_service.choose_shift(1)
 
     def test_get_current_user(self):
         self.shift_app_service.login(self.user.username, self.user.password)
@@ -32,7 +40,7 @@ class TestShiftAppService(unittest.TestCase):
         self.shift_app_service.logout()
         self.assertEqual(None, self.shift_app_service.get_current_user)
 
-    def test_create_shift_inavlid_information(self):
+    def test_create_shift_invalid_information(self):
         with pytest.raises(InvalidShiftInformation):
             self.shift_app_service.create_shift(
                 date="", time="5:00-12:00", location="Kumpula", employee=None)
