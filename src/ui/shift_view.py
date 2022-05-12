@@ -64,7 +64,6 @@ class ShiftView:
                                  message="Please choose one shift at a time"
                                  )
 
-
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
         self._table = ttk.Treeview(

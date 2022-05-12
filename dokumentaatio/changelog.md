@@ -59,5 +59,8 @@
 - Testit testaavat nyt ohjelmaa laajasti
 - Uusi virheviesti sille, jos käyttäjä valitsee liian monta vuoroa itselleen kerralla
 - Docstring dokumentaation viimeistely
+- Dokumentaatioon lisätty laajempi käyttöohje
+- Dokumentaatioon lisätty testausdokumentti
+- Lisätty uusi testi vuoron valitsemista varten shiftappservicen kautta
 
 

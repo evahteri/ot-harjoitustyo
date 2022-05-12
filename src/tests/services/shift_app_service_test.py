@@ -1,3 +1,4 @@
+from cgi import test
 import unittest
 import pytest
 from entities.shift import Shift
@@ -24,12 +25,15 @@ class TestShiftAppService(unittest.TestCase):
     def test_login_with_invalid_credentials(self):
         with pytest.raises(FailedLoginError):
             self.shift_app_service.login("Emma", "Password1!")
-    
+
     def test_choose_shift(self):
         repository = ShiftRepository()
-        repository.create_shift(Shift(date="12.1.2022", time="12:00-20:00", location="Unicafe",employee=None))
+        repository.create_shift(
+            Shift(date="12.1.2022", time="12:00-20:00", location="Unicafe", employee=None))
         self.shift_app_service.login(self.user.username, self.user.password)
         self.shift_app_service.choose_shift(1)
+        test_shift = repository.find_user_shifts(self.user)
+        self.assertEqual("Samuli", test_shift[0][4])
 
     def test_get_current_user(self):
         self.shift_app_service.login(self.user.username, self.user.password)

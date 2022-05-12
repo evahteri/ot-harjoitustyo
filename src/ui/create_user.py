@@ -1,5 +1,6 @@
 from tkinter import StringVar, ttk, constants, messagebox
 from services.shift_app_service import InvalidPassword, UsernameExistsError, UsernameTooShortError, NoRoleError
+from sqlite3 import OperationalError
 
 
 class CreateUserUi:
@@ -35,7 +36,7 @@ class CreateUserUi:
         """Closes the view
         """
         self._frame.destroy()
-    
+
     def _handle_back_button(self):
         self._handle_login()
 
@@ -48,6 +49,10 @@ class CreateUserUi:
                 username=username, password=password, role=role)
             messagebox.showinfo(title="User created",
                                 message="User created succesfully!")
+
+        except OperationalError:
+            messagebox.showerror(title="Database Error",
+                                 message="Please run the build -task before launching the app!")
 
         except UsernameTooShortError:
             messagebox.showerror(title="Username too short",
@@ -67,7 +72,6 @@ class CreateUserUi:
             messagebox.showerror(title="Username exists",
                                  message=f"User {username} already exists!"
                                  )
-
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
@@ -106,4 +110,3 @@ class CreateUserUi:
             master=self._frame, text="Back", command=self._handle_back_button
         )
         back_button.grid(row=12, column=0)
-

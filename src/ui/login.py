@@ -1,3 +1,4 @@
+from sqlite3 import OperationalError
 from tkinter import StringVar, ttk, constants, messagebox
 from services.shift_app_service import FailedLoginError
 
@@ -50,6 +51,9 @@ class LoginUi:
         except FailedLoginError:
             messagebox.showerror(title="Login Error",
                                  message="Invalid username or password!")
+        except OperationalError:
+            messagebox.showerror(title="Database Error",
+                                 message="Please run the build -task before launching the app!")
 
     def _base(self):
         self._frame = ttk.Frame(master=self._root)
@@ -69,7 +73,7 @@ class LoginUi:
         password_header.grid(row=4, column=0)
 
         self.password_entry = ttk.Entry(
-            master=self._frame, textvariable=self._password_entry,show="*")
+            master=self._frame, textvariable=self._password_entry, show="*")
 
         self.password_entry.grid(row=5, column=0)
 

@@ -34,7 +34,7 @@ class CreateShift:
         """Closes the view
         """
         self._frame.destroy()
-    
+
     def _handle_back_button(self):
         self._handle_employer_ui()
 
