@@ -1,6 +1,7 @@
 # Testausdokumentti
 
 Ohjelmaa on testattu käyttöliittymän kautta laajasti eri tilanteiden luomisella ja automaattisilla yksikkö- ja integraatiotesteillä unittestillä.
+Huom! Ohjelma on kehitetty ja testattu ainoastaan Python -versiolla 3.8.10.
 
 ## Yksikkö- ja integraatiotestaus
 
