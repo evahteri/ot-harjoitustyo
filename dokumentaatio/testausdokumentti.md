@@ -19,7 +19,7 @@ Tiedostot testaavat laajasti Repository -luokkien metodeja eri funktioilla.
 
 Ohjelman testikattavuus on 98%, kun käyttöliittymää ei testata.
 
-![kattavuus](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-11%2020-20-00.png)
+![kattavuus](https://github.com/evahteri/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Screenshot%20from%202022-05-12%2007-20-41.png)
 
 Kattavuuden ulkopuolelle näistä jäivät initialize-database tiedoston kutsu, configin FileNotFoundError ja build -tiedoston kutsu.
 Nämä puutteet eivät jätä mitään kriittistä toiminnallisuutta testien ulkopuolelle.
@@ -40,4 +40,3 @@ Kaikki määrittelydokumentin vaativat toiminnallisuudet on toteutettu ja ne toi
 ## Sovellukseen jääneet laatuongelmat
 
 - Käyttäjä voi muokata ikkunan kokoa, eikä se muutu välttämättä takaisin normaaliin kokoon, tälle ratkaisu olisi ollut määrittää jokaiselle ikkunalle tietty koko, jota ei voi muuttaa.
-- Sovellus ei anna helposti ymmärrettäviä virheilmoitusta, jos käyttäjä ei ole asentanut riippuvuuksia tai muita asennuksen vaiheita oikein.
