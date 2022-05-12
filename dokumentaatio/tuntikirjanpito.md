@@ -32,5 +32,7 @@
 | 6.5.          | 5             | Choose shift toiminnallisuuden tekemistä                   |
 | 11.5.         | 2             | Tallennuksen konfiguraatioiden tekemistä                   |
 | 11.5.         | 2             | Testien luomista                                           |
-| 11.5          | 3             | Dokumentaation täydentäminen                               |
-| yht.          | 81            |                                                            |
+| 11.5.         | 3             | Dokumentaation täydentäminen                               |
+| 12.5.         | 1             | Testien luonti & dokumentaation viimeistely                |
+| 12.5.         | 1             | Uudet virheilmoitukset, jos build taskia ei suoritettu     |
+| yht.          | 83            |                                                            |

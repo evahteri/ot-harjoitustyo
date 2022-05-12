@@ -62,5 +62,6 @@
 - Dokumentaatioon lisätty laajempi käyttöohje
 - Dokumentaatioon lisätty testausdokumentti
 - Lisätty uusi testi vuoron valitsemista varten shiftappservicen kautta
+- Lisätty visuaaliset virheilmoitukset jos käyttäjä on unohtanut alustaa tietokannat
 
 
