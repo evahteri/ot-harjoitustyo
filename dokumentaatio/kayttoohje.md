@@ -1,5 +1,7 @@
 # Käyttöohje
 
+Lataa viimeisin versio ohjelmasta klikkaamalla projektin etusivulla "Code" ja painamalla "Download ZIP"
+
 ## Konfigurointi
 
 Ohjelma käyttää tallennukseen kahta eri tiedostoa. Näiden nimiä voit muokana ohjelman .env -tiedostossa:
